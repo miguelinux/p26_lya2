@@ -1,0 +1,3 @@
+Nombre: Luis Angel Flores Epinosa	
+No. Contro: 210110157
+Lenguaje de programación: C++
