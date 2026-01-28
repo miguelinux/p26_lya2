@@ -1,9 +1,9 @@
-
-
 #include <iostream>
 
 using namespace std;
 
 int main (int argc, char *argv[])
 {
-	cout << "Lozano Gutierrez Jacob Asael!" << endl;
+	cout << "Hola mundo!" << endl;
+	return 0;
+}
