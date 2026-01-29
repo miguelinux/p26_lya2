@@ -1,3 +1,0 @@
-Nombre: Nombre completo
-No. Contro: 123456789
-Lenguaje de programación: C/C++/Java/Python
