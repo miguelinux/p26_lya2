@@ -1,4 +1,3 @@
-//flores rodriguez jair jecsan
 
 #include "suma_diosarrolladores.h"
 
