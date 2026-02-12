@@ -1,0 +1,3 @@
+Nombre: Jonathan Joel Galaviz Arroyo
+No. Contro: 23010487
+Lenguaje de programación: C/C++/Java/Python
