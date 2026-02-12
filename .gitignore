@@ -1,3 +1,11 @@
+# Imagenes
+*.png
+*.jpg
+*.svg
+
+# Documentos
+*.pdf
+
 # Prerequisites
 *.d
 
