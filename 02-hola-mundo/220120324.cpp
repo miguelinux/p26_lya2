@@ -1,8 +1,11 @@
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
-    std::cout<<"Hector Fernando Correa Cruzaley";
+    cout<<"Hector Fernando Correa Cruzaley"<<endl;
+    cout<<"220120324";
 
     return 0;
 }
