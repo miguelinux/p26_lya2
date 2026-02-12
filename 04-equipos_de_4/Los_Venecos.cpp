@@ -1,11 +1,12 @@
-/* SPDX-License-Identifier: GPL-3.0-or-later
- */
+//Jose Ismael Gonzalez Cosme
+//Jesus Gerardo de la O Duran
+//Aaron Alejandro Martinez Serrano
 
 #include <iostream>
 
 #include "suma_Los_Venecos.h"
-#include "resta_Los_Venecos.h"
-#include "multipliacion_Los_Venecos.h"
+//#include "resta_Los_Venecos.h"
+#include "multiplicacion_Los_Venecos.h"
 #include "division_Los_Venecos.h"
 
 using namespace std;
@@ -13,8 +14,8 @@ using namespace std;
 int main (int argc, char *argv[])
 {
   cout << "3 + 5 = "<< suma(3,5) << endl;
-  cout << "3 - 5 = "<< resta(3,5) << endl;
-  cout << "3 * 5 = "<< multipliacion(3,5) << endl;
+ // cout << "3 - 5 = "<< resta(3,5) << endl;
+  cout << "3 * 5 = "<< multiplicacion(3,5) << endl;
   cout << "3 / 5 = "<< division(3,5) << endl;
 
   return 0;
