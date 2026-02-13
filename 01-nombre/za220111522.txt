@@ -1,0 +1,3 @@
+Nombre: Jose Ismael Gonzalez Cosme
+No. Contro: 220111522
+Lenguaje de programación: C/C++/Java/Python

@@ -1,0 +1,3 @@
+Nombre: Daniela Ivette Nava Miranda
+No. Contro: 220111414
+Lenguaje de programación: C++/Python

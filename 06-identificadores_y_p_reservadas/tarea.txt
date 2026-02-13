@@ -1,0 +1,12 @@
+Extender el automata del ejercicio 04 para que identifique:
+ + identificador (comienzan mayuscula, minuscula o guion_bajo)
+ + Palabras reservadas
+ + Signos aritmeticos
+
+del Lenguaje C++
+
+Entregables:
+ + Archvos .cpp y .h si es necesario
+ + Archivo .dot con el automata
+
+
