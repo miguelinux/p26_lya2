@@ -1,0 +1,3 @@
+Nombre: Carlos Alberto Solis Morales
+No. Contro: 220120161
+Lenguaje de programación: C/C++/Java/Python
