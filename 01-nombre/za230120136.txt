@@ -1,0 +1,3 @@
+Nombre: Alan Antonio Gama Dominguez
+No. Control: 230120136
+Lenguaje de programación: C++/Python
