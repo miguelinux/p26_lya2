@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><meta:creation-date>2026-02-25T15:17:48.993976558</meta:creation-date><dc:date>2026-02-25T15:19:07.694946698</dc:date><meta:editing-duration>PT1M19S</meta:editing-duration><meta:editing-cycles>1</meta:editing-cycles><meta:document-statistic meta:table-count="1" meta:cell-count="90" meta:object-count="0"/><meta:generator>LibreOffice/24.2.7.2$Linux_X86_64 LibreOffice_project/420$Build-2</meta:generator></office:meta>
+ <office:meta><meta:creation-date>2026-02-25T15:17:48.993976558</meta:creation-date><dc:date>2026-02-25T15:36:55.165551107</dc:date><meta:editing-duration>PT19M6S</meta:editing-duration><meta:editing-cycles>5</meta:editing-cycles><meta:generator>LibreOffice/24.2.7.2$Linux_X86_64 LibreOffice_project/420$Build-2</meta:generator><meta:document-statistic meta:table-count="1" meta:cell-count="126" meta:object-count="0"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">10968</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">31641</config:config-item>
    <config:config-item config:name="VisibleAreaHeight" config:type="int">13547</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
      <config:config-item-map-named config:name="Tables">
       <config:config-item-map-entry config:name="Hoja1">
-       <config:config-item config:name="CursorPositionX" config:type="int">2</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">9</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">1</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">7</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
-       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">1</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">0</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">250</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">160</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -31,9 +31,9 @@
       </config:config-item-map-entry>
      </config:config-item-map-named>
      <config:config-item config:name="ActiveTable" config:type="string">Hoja1</config:config-item>
-     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1783</config:config-item>
+     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">969</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-     <config:config-item config:name="ZoomValue" config:type="int">250</config:config-item>
+     <config:config-item config:name="ZoomValue" config:type="int">160</config:config-item>
      <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
      <config:config-item config:name="ShowPageBreakPreview" config:type="boolean">false</config:config-item>
      <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
@@ -70,6 +70,15 @@
    <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
    <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
    <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item-map-indexed config:name="ForbiddenCharacters">
+    <config:config-item-map-entry>
+     <config:config-item config:name="Language" config:type="string">es</config:config-item>
+     <config:config-item config:name="Country" config:type="string">MX</config:config-item>
+     <config:config-item config:name="Variant" config:type="string"/>
+     <config:config-item config:name="BeginLine" config:type="string"/>
+     <config:config-item config:name="EndLine" config:type="string"/>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
    <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
    <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
    <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
@@ -413,6 +422,21 @@
   <style:style style:name="co3" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="7.879cm"/>
   </style:style>
+  <style:style style:name="co4" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.738cm"/>
+  </style:style>
+  <style:style style:name="co5" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.443cm"/>
+  </style:style>
+  <style:style style:name="co6" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.769cm"/>
+  </style:style>
+  <style:style style:name="co7" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="3.15cm"/>
+  </style:style>
+  <style:style style:name="co8" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="5.057cm"/>
+  </style:style>
   <style:style style:name="ro1" style:family="table-row">
    <style:table-row-properties style:row-height="0.452cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
   </style:style>
@@ -422,6 +446,9 @@
   <number:number-style style:name="N2">
    <number:number number:decimal-places="2" number:min-decimal-places="2" number:min-integer-digits="1"/>
   </number:number-style>
+  <style:style style:name="ce1" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color"/>
+  </style:style>
   <style:page-layout style:name="pm1">
    <style:page-layout-properties style:writing-mode="lr-tb"/>
    <style:header-style>
@@ -483,6 +510,12 @@
     <table:table-column table:style-name="co1" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co3" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co2" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co4" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co5" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co6" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co7" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co8" table:default-cell-style-name="Default"/>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>NO</text:p>
@@ -492,6 +525,27 @@
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>ALUMNO</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Equipo</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>01-nombre</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>02-hola_mundo</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>03-libremente</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>04-equipos_de_cuatro</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>05-entero_flotante</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>06-identificadores_y_p_reserv</text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="ro1">
@@ -504,6 +558,12 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>AGUILAR MOLINA JUAN ROBERTO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce1"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -515,6 +575,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>CAMACHO CAMACHO SOELY MAYOMI</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -526,6 +591,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>CASTRO MELGOZA KATIA LIZBETH</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
@@ -537,6 +607,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>CORREA CRUZALEY HECTOR FERNANDO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
@@ -548,6 +623,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>DE AVILA ALVAREZ DIEGO JAVIER</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="6" calcext:value-type="float">
@@ -559,6 +639,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>DE LA O DURAN JESUS GERARDO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="7" calcext:value-type="float">
@@ -570,6 +655,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>FLORES ESPINOSA LUIS ANGEL</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="8" calcext:value-type="float">
@@ -581,6 +671,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>FLORES RODRIGUEZ JAIR JECSAN</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="9" calcext:value-type="float">
@@ -592,6 +687,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>GALAVIZ ARROYO JONATHAN JOEL</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
@@ -603,6 +703,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>GAMA DOMINGUEZ ALAN ANTONIO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="11" calcext:value-type="float">
@@ -614,6 +719,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>GONZALEZ COSME JOSE ISMAEL</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
@@ -625,6 +735,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>HERNANDEZ PEREZ OMAR ULISES</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="13" calcext:value-type="float">
@@ -636,6 +751,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>LIMON ARANZAZU JORGE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="14" calcext:value-type="float">
@@ -647,6 +767,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>LOZANO GUTIERREZ JACOB ASAEL</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
@@ -658,6 +783,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>MACIAS RODRIGUEZ FABIAN RAMSES</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="90" calcext:value-type="float">
+      <text:p>90</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="16" calcext:value-type="float">
@@ -669,6 +799,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>MARTINEZ SERRANO AARON ALEJANDRO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="17" calcext:value-type="float">
@@ -680,6 +815,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>MONTES MEDINA CARLOS ALBERTO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="18" calcext:value-type="float">
@@ -691,6 +831,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>MORA ESPARZA GRACIELA</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="19" calcext:value-type="float">
@@ -702,6 +847,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>MUÑOZ AVILA KARINA GUADALUPE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="20" calcext:value-type="float">
@@ -713,6 +863,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>MURILLO RAMOS ELIAND ANDRES</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="21" calcext:value-type="float">
@@ -724,6 +879,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>NAVA MIRANDA DANIELA IVETTE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="22" calcext:value-type="float">
@@ -735,6 +895,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>NUÑEZ VAZQUEZ JOSE JAIME</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="23" calcext:value-type="float">
@@ -746,6 +911,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>OROZCO LOPEZ JUAN ESTEBAN</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="24" calcext:value-type="float">
@@ -757,6 +927,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>RAMIREZ SANDOVAL CARLOS SANTIAGO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="25" calcext:value-type="float">
@@ -768,6 +943,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>RODRÍGUEZ GONZÁLEZ CARLOS EMILIANO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="26" calcext:value-type="float">
@@ -779,6 +959,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>SANDOVAL PLASCENCIA ALAIN</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="27" calcext:value-type="float">
@@ -790,6 +975,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>SEVILLA LOPEZ DIEGO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="28" calcext:value-type="float">
@@ -801,6 +991,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>SOLIS MORALES CARLOS ALBERTO</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="float" office:value="29" calcext:value-type="float">
@@ -812,6 +1007,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>VILLEGAS ASCENCIO KENNIA LIZETH</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
     </table:table-row>
    </table:table>
    <table:named-expressions/>
