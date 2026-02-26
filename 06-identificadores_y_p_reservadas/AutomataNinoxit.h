@@ -1,3 +1,8 @@
+/*
+Equipo Ninoxit
+Soely Mayomi Camacho Camacho
+Daniela Ivette Nava Miranda
+*/
 #ifndef ANALIZADOR_H
 #define ANALIZADOR_H
 
