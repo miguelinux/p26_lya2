@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -8,9 +10,22 @@ int main (int argc, char *argv[])
 		cerr << "Error: no hay suficientes argumentos" << endl;
 		return 1;
 	}
-	for (int i=0; i<argc; i++) {
-		cout << i << ": " << argv[i] << endl;
+
+	string nombreArchivo = argv[1];
+	ifstream archivo(nombreArchivo); // Intentamos abrir el archivo
+
+	// Comprobamos si el archivo se abrió correctamente
+	if (!archivo.is_open()) {
+		cerr << "Error: No se pudo abrir el archivo '" << nombreArchivo << "'" << endl;
+		return 1;
 	}
+
+	string linea;
+
+	while(getline(archivo,linea)) {
+		cout << linea << endl;
+	}
+	archivo.close();
 	return 0;
 }
 
