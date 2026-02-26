@@ -75,3 +75,14 @@ int analizador(const std::string& cadena) {
     
     return estado;
 }
+
+int main() {
+    // solo testeando con un flag debug
+    // igual lo quitamos
+    bool debug = 1;
+    std::string cadenaInvalida = "";
+    std::string cadenaValida = "+";
+    
+    std::cout << analizador((debug == true) ? cadenaInvalida : cadenaValida);
+    return 0;
+}
