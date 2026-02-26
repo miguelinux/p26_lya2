@@ -1,6 +1,11 @@
+/*
+    Equipo Ninoxit
+    Soely Mayomi Camacho Camacho
+    Daniela Ivette Nava Miranda
+*/
 #include "AutomataNinoxit.h"
 
-const std::string reservadas = "const|int|double|float|if|else|switch|case|default|for|while|do|main";
+const std::string reservadas = "const|int|double|float|if|else|switch|case|default|for|while|do|string|char|list|vector";
 const std::string numeros = "1234567890";
 const std::string letras = "abcdefghijklmnopqrstuvwxyz";
 
