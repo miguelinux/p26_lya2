@@ -1,14 +1,11 @@
-/* Juan Esteban Orozco Lopez	
-   za220120216
-    */
-
-
 #include <iostream>
 #include <fstream>
 #include <cctype>
+#include "analizador.h"
 
 using namespace std;
 
+// Verifica si es palabra reservada
 bool esReservada(string palabra) {
     if (palabra == "include") return true;
     if (palabra == "using") return true;
@@ -21,17 +18,23 @@ bool esReservada(string palabra) {
     return false;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 
-    ifstream archivo("entrada.cpp"); // archivo a analizar
-    char c;
-    string lexema = "";
-    int estado = 0;
+    if (argc < 2) {
+        cout << "No se proporciono archivo" << endl;
+        return 1;
+    }
+
+    ifstream archivo(argv[1]);
 
     if (!archivo.is_open()) {
         cout << "No se pudo abrir el archivo" << endl;
         return 1;
     }
+
+    char c;
+    string lexema = "";
+    int estado = 0;
 
     while (archivo.get(c)) {
 
@@ -56,9 +59,19 @@ int main() {
                 lexema = c;
                 estado = 4; // posible comentario
             }
-            else if (c == '+' || c == '-' || c == '*' ||
-                     c == '%' || c == '=' || c == '<' || c == '>') {
-                cout << c << " -> Operador" << endl;
+            else if (c == '<') {
+                cout << "< -> Operador menor que" << endl;
+            }
+            else if (c == '>') {
+                cout << "> -> Operador mayor que" << endl;
+            }
+            else if (c == '#') {
+                cout << "# -> Simbolo" << endl;
+            }
+            else if (c == '{' || c == '}' ||
+                     c == '(' || c == ')' ||
+                     c == ';' || c == ',') {
+                cout << c << " -> Simbolo" << endl;
             }
 
             break;
@@ -76,7 +89,7 @@ int main() {
                     cout << lexema << " -> Identificador" << endl;
 
                 estado = 0;
-                archivo.unget(); // regresamos un caracter
+                archivo.unget(); // regresamos caracter
             }
 
             break;
@@ -119,7 +132,7 @@ int main() {
                 estado = 0;
             }
             else {
-                cout << "/ -> Operador" << endl;
+                cout << "/ -> Operador division" << endl;
                 estado = 0;
                 archivo.unget();
             }
