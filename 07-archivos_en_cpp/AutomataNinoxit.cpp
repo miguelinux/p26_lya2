@@ -9,7 +9,15 @@
 #include <string>
 #include <stack>
 
-const std::string reservadas  = "|const|int|double|float|if|else|switch|case|default|for|while|do|string|char|list|vector|return|void|bool|true|false|";
+const std::string reservadas = "|auto|break|case|catch|char|class|const|const_cast|continue|"
+                               "default|delete|do|double|dynamic_cast|else|enum|explicit|export|"
+                               "extern|false|float|for|friend|goto|if|inline|int|long|mutable|"
+                               "namespace|new|operator|private|protected|public|register|"
+                               "reinterpret_cast|return|short|signed|sizeof|static|static_cast|"
+                               "struct|switch|template|this|throw|true|try|typedef|typeid|"
+                               "typename|union|unsigned|using|virtual|void|volatile|while|"
+                               "string|list|vector|map|set|pair|stack|queue|cout|cin|cerr|endl|";
+
 const std::string numeros     = "1234567890";
 const std::string letras      = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
 const std::string separadores = "+-*/%=<>!&|(){}[];,";
@@ -75,6 +83,8 @@ std::string nombreEstado(int estado) {
         case E_SEPARADOR:       return "SEPARADOR";
         case E_COMENTARIO:      return "COMENTARIO";
         case E_PREPROCESADOR:   return "PREPROCESADOR";
+        case E_FUNCION:         return "FUNCION";
+        case E_CADENA:          return "CADENA";
         default:                return "ERROR";
     }
 }
@@ -83,13 +93,13 @@ void tokenizar(const std::string& linea, int numLinea, std::stack<std::string>& 
     int n = (int)linea.size();
     if (n == 0) return;
 
-    // Preprocesador
+    // Preprocesadores
     if (linea[0] == '#') {
         pila.push("Linea " + std::to_string(numLinea) + " | PREPROCESADOR | " + linea);
         return;
     }
 
-    // Comentario de línea completa
+    // Comentarios
     if (n >= 2 && linea[0] == '/' && linea[1] == '/') {
         pila.push("Linea " + std::to_string(numLinea) + " | COMENTARIO | " + linea);
         return;
@@ -101,6 +111,14 @@ void tokenizar(const std::string& linea, int numLinea, std::stack<std::string>& 
     auto flush = [&]() {
         if (!token.empty()) {
             int estado = analizador(token);
+
+            
+            if (estado == E_IDENTIFICADOR || estado == E_RESERVADA) {
+                int j = i;
+                while (j < n && (linea[j] == ' ' || linea[j] == '\t')) j++;
+                if (j < n && linea[j] == '(') estado = E_FUNCION;
+            }
+
             pila.push("Linea " + std::to_string(numLinea) + " | " + nombreEstado(estado) + " | " + token);
             token = "";
         }
@@ -109,14 +127,37 @@ void tokenizar(const std::string& linea, int numLinea, std::stack<std::string>& 
     while (i < n) {
         char ch = linea[i];
 
-        // Comentario inline
         if (ch == '/' && i + 1 < n && linea[i+1] == '/') {
             flush();
             pila.push("Linea " + std::to_string(numLinea) + " | COMENTARIO | " + linea.substr(i));
             break;
         }
 
-        // Separador
+        if (ch == '"') {
+            flush();
+            std::string lit(1, ch); i++;
+            while (i < n && linea[i] != '"') {
+                if (linea[i] == '\\' && i+1 < n) { lit += linea[i++]; }
+                lit += linea[i++];
+            }
+            if (i < n) { lit += linea[i++]; }
+            pila.push("Linea " + std::to_string(numLinea) + " | CADENA | " + lit);
+            continue;
+        }
+
+        if (ch == '\'') {
+            flush();
+            std::string lit(1, ch); i++;
+            while (i < n && linea[i] != '\'') {
+                if (linea[i] == '\\' && i+1 < n) { lit += linea[i++]; }
+                lit += linea[i++];
+            }
+            if (i < n) { lit += linea[i++]; }
+            pila.push("Linea " + std::to_string(numLinea) + " | CADENA | " + lit);
+            continue;
+        }
+
+        // Separadores
         if (separadores.find(ch) != std::string::npos) {
             flush();
             pila.push("Linea " + std::to_string(numLinea) + " | SEPARADOR | " + std::string(1, ch));
@@ -124,7 +165,6 @@ void tokenizar(const std::string& linea, int numLinea, std::stack<std::string>& 
             continue;
         }
 
-        // Espacios y tabs solo separan
         if (ch == ' ' || ch == '\t') { flush(); i++; continue; }
 
         token += ch;

@@ -22,6 +22,9 @@
 #define E_SEPARADOR         20
 #define E_COMENTARIO        21
 #define E_PREPROCESADOR     22
+#define E_FUNCION           23
+#define E_CADENA            24
+
 
 bool        checker(const std::string& word, const std::string base);
 int         analizador(const std::string& cadena);
