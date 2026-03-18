@@ -4,7 +4,7 @@
 	Asael Lozano		220112555
 	Sandoval Placencia	220111748
 */
-
+//corregido
 #include <iostream>
 #include <string>
 #include <cctype>

@@ -1,6 +1,6 @@
 #ifndef _ESTADOS_H_
 #define _ESTADOS_H_
-
+//corregido
 #define E_ERROR         0xFFFF
 
 #define E_INICIAL       0
