@@ -4,7 +4,7 @@
 	Asael Lozano		220112555
 	Sandoval Placencia	220111748
 */
-
+//corregido
 #include <iostream>
 #include <string>
 #include <cctype>
@@ -16,7 +16,7 @@ using namespace std;
 
 int analiza(string str)
 {
-	int estado = 0;
+	int estado = E_INICIAL;
 	
 	string reservadas[] = {
 		"alignas","alignof","and","and_eq","asm","atomic_cancel","atomic_commit",
@@ -31,15 +31,19 @@ int analiza(string str)
 		"return","short","signed","sizeof","static","static_assert","static_cast",
 		"struct","switch","synchronized","template","this","thread_local","throw",
 		"true","try","typedef","typeid","typename","union","unsigned","using",
-		"virtual","void","volatile","wchar_t","while","xor","xor_eq"
+		"virtual","void","volatile","wchar_t","while","xor","xor_eq","endl"
 	};
 	
+	//Validar si es reservada antes de que el autómata lo confunda con ID
+    for(string s : reservadas) {
+        if (s == str) 
+		return E_RESERVADA;
+    }
+		
 	string include = "";
-	string reservada = "";
-	bool si_reservada = false;
+	
 	
 	for (char c : str) {
-		reservada += c;
 		switch (c) {
 			
 			case '+': case '-':
@@ -96,7 +100,7 @@ int analiza(string str)
 			    break;
 			
 			case '*': case '%': case '=': case ';': case ',': case '(': case ')':
-			case '{': case '}': case '<': case '>': case '[': case ']':	
+			case '{': case '}': case '<': case '>': case '[': case ']':	case '!':case ':':
 				switch (estado){
 					case E_INICIAL:
 						estado = E_OPERADOR;
@@ -145,9 +149,6 @@ int analiza(string str)
 				}
 		}
 		
-		for(string s : reservadas){
-			if (s == reservada) return E_RESERVADA;
-		}
 		
 		if (isdigit(c)){
 			switch (estado){
@@ -163,17 +164,14 @@ int analiza(string str)
 			}
 		}
 		
-		if (isalpha(c) || c == '_'){
-			switch(estado){
-				case E_INICIAL:
-					estado = E_ID;
-					break;
-				case E_GATO:
-					include += c;
-					if (include == "#include") estado = E_INCLUDE;
-					break;
-			}
-		}
+		if (isalpha(c) || c == '_') {
+            if (estado == E_INICIAL) estado = E_ID;
+            else if (estado == E_ID) estado = E_ID;
+            else if (estado == E_GATO) {
+                include += c;
+                if (str.find("include") != string::npos) return E_INCLUDE;
+            }
+        }
 		
 		if (isalnum(c) || c == '_'){
 			switch(estado){
@@ -189,8 +187,8 @@ int analiza(string str)
 	return estado;
 }
 
-void imprimirResultado(string token, int estado_final)
-{
+void imprimirResultado(string token, int estado_final){
+	if (token.empty()) return;
 	cout << "Token: " << token << endl;
 
 	switch(estado_final) {
@@ -224,6 +222,12 @@ void imprimirResultado(string token, int estado_final)
 		case E_COMILLA_F:
 			cout << "string" << endl;
 			break;
+		case E_COMENT2:   
+		    cout << "Comentario" << endl; 
+			break;	
+		case E_PUNTO:     
+		    cout << "Es un punto/selector" << endl; 
+			break;	
 		default:
 			cout << "Error: no se identifico la entrada" << endl;
 			break;
@@ -249,41 +253,58 @@ int main (int argc, char *argv[])
 	string cadena;
 
 	char c;
-string token = "";
+    string token = "";
 
 	while (file.get(c)) {
 	
-	    // separadores de tokens
-	    if (isspace(c)) {
-	        if (!token.empty()) {
-	            int estado_final = analiza(token);
-	            imprimirResultado(token, estado_final);
-	            token = "";
-	        }
-	        continue;
-	    }
+	    
+	   if (isspace(c)) {
+            if (!token.empty()) { 
+			imprimirResultado(token, analiza(token)); 
+			token = ""; }
+            continue;
+        }
+        
+        if (c == '/' && file.peek() == '/') {
+            if (!token.empty()) { imprimirResultado(token, analiza(token)); token = ""; }
+            string comentario;
+            getline(file, comentario);
+            imprimirResultado("//" + comentario, E_COMENT2);
+            continue;
+        }
+        
+        if (c == '.') {
+            if (!token.empty() && isdigit(token[0])) {
+                token += c; 
+            } else {
+                if (!token.empty()) { imprimirResultado(token, analiza(token)); token = ""; }
+                imprimirResultado(".", E_PUNTO); 
+            }
+            continue;
+        }
 	
-	    // operadores individuales
-	    if (ispunct(c) && c != '_') {
-
-		    if (!token.empty()) {
-		        int estado_final = analiza(token);
-		        imprimirResultado(token, estado_final);
-		        token = "";
-		    }
-		
-		    string op(1, c);
-		    int estado_final = analiza(op);
-		    imprimirResultado(op, estado_final);
-		
-		    continue;
-		}
+	    
+	    if (ispunct(c) && c != '_' && c != '#') {
+            if (!token.empty()) { imprimirResultado(token, analiza(token)); token = ""; }
+            
+          
+            if (c == '"') {
+                string s(1, c);
+                while (file.get(c) && c != '"') s += c;
+                s += '"';
+                imprimirResultado(s, E_COMILLA_F);
+            } else {
+                string op(1, c);
+                imprimirResultado(op, analiza(op));
+            }
+            continue;
+        }
 	
-	    // construir token
+	    
 	    token += c;
 	}
 
-	file.close();
+	if (!token.empty()) 
+	imprimirResultado(token, analiza(token));
 	return 0;
 }
-
