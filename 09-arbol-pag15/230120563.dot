@@ -1,0 +1,575 @@
+digraph ArbolDerivacion {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+
+    programa [label="programa"];
+    bloque [label="bloque"];
+
+    llaveA [label="{"];
+    decls [label="decls"];
+    instrs [label="instrs"];
+    llaveC [label="}"];
+
+    programa -> bloque;
+    bloque -> llaveA;
+    bloque -> decls;
+    bloque -> instrs;
+    bloque -> llaveC;
+
+    // DECLARACIONES
+    decls -> decls1;
+    decls -> decl5;
+
+    decls1 [label="decls"];
+    decl5 [label="decl"];
+
+    decls1 -> decls2;
+    decls1 -> decl4;
+
+    decls2 [label="decls"];
+    decl4 [label="decl"];
+
+    decls2 -> decls3;
+    decls2 -> decl3;
+
+    decls3 [label="decls"];
+    decl3 [label="decl"];
+
+    decls3 -> decls4;
+    decls3 -> decl2;
+
+    decls4 [label="decls"];
+    decl2 [label="decl"];
+
+    decls4 -> decl1;
+    decl1 [label="decl"];
+
+    decl1 -> tipo1;
+    decl1 -> id_i;
+    decl1 -> pcoma1;
+
+    tipo1 [label="tipo"];
+    id_i [label="id: i"];
+    pcoma1 [label=";"];
+    tipo1 -> int1;
+    int1 [label="int"];
+
+    decl2 -> tipo2;
+    decl2 -> id_j;
+    decl2 -> pcoma2;
+
+    tipo2 [label="tipo"];
+    id_j [label="id: j"];
+    pcoma2 [label=";"];
+    tipo2 -> int2;
+    int2 [label="int"];
+
+    decl3 -> tipo3;
+    decl3 -> id_v;
+    decl3 -> pcoma3;
+
+    tipo3 [label="tipo"];
+    id_v [label="id: v"];
+    pcoma3 [label=";"];
+    tipo3 -> float1;
+    float1 [label="float"];
+
+    decl4 -> tipo4;
+    decl4 -> id_x;
+    decl4 -> pcoma4;
+
+    tipo4 [label="tipo"];
+    id_x [label="id: x"];
+    pcoma4 [label=";"];
+    tipo4 -> float2;
+    float2 [label="float"];
+
+    decl5 -> tipo5;
+    decl5 -> id_a;
+    decl5 -> pcoma5;
+
+    tipo5 [label="tipo"];
+    id_a [label="id: a"];
+    pcoma5 [label=";"];
+
+    tipo5 -> tipo_arreglo;
+    tipo5 -> corA;
+    tipo5 -> num100;
+    tipo5 -> corC;
+
+    tipo_arreglo [label="tipo"];
+    tipo_arreglo -> float3;
+
+    float3 [label="float"];
+    corA [label="["];
+    num100 [label="num: 100"];
+    corC [label="]"];
+
+    // INSTRUCCIONES
+    instrs -> instr_while;
+
+    instr_while [label="instr"];
+    instr_while -> while_kw;
+    instr_while -> parA1;
+    instr_while -> bool_true;
+    instr_while -> parC1;
+    instr_while -> bloque_while;
+
+    while_kw [label="while"];
+    parA1 [label="("];
+    bool_true [label="bool"];
+    bool_true -> true_kw;
+    true_kw [label="true"];
+    parC1 [label=")"];
+
+    bloque_while [label="bloque"];
+    bloque_while -> llaveA2;
+    bloque_while -> decls_vacio;
+    bloque_while -> instrs_while;
+    bloque_while -> llaveC2;
+
+    llaveA2 [label="{"];
+    decls_vacio [label="decls → ε"];
+    llaveC2 [label="}"];
+
+    // CUERPO DEL WHILE
+    instrs_while -> instrs_w1;
+    instrs_while -> instr_swap3;
+
+    instrs_w1 [label="instrs"];
+    instrs_w1 -> instrs_w2;
+    instrs_w1 -> instr_swap2;
+
+    instrs_w2 [label="instrs"];
+    instrs_w2 -> instrs_w3;
+    instrs_w2 -> instr_swap1;
+
+    instrs_w3 [label="instrs"];
+    instrs_w3 -> instrs_w4;
+    instrs_w3 -> instr_if;
+
+    instrs_w4 [label="instrs"];
+    instrs_w4 -> instrs_w5;
+    instrs_w4 -> instr_do2;
+
+    instrs_w5 [label="instrs"];
+    instrs_w5 -> instr_do1;
+
+    // do i = i + 1; while (a[i] < v);
+    instr_do1 [label="instr"];
+    instr_do1 -> do_kw1;
+    instr_do1 -> instr_asig_i;
+    instr_do1 -> while_kw_do1;
+    instr_do1 -> parA_do1;
+    instr_do1 -> bool_ai_v;
+    instr_do1 -> parC_do1;
+    instr_do1 -> pcoma_do1;
+
+    do_kw1 [label="do"];
+    while_kw_do1 [label="while"];
+    parA_do1 [label="("];
+    parC_do1 [label=")"];
+    pcoma_do1 [label=";"];
+
+    instr_asig_i [label="instr"];
+    instr_asig_i -> loc_i1;
+    instr_asig_i -> igual1;
+    instr_asig_i -> expr_i_mas_1;
+    instr_asig_i -> pcoma_i1;
+
+    loc_i1 [label="loc"];
+    loc_i1 -> id_i2;
+    id_i2 [label="id: i"];
+
+    igual1 [label="="];
+    pcoma_i1 [label=";"];
+
+    expr_i_mas_1 [label="expr"];
+    expr_i_mas_1 -> expr_i;
+    expr_i_mas_1 -> mas1;
+    expr_i_mas_1 -> term_1;
+
+    expr_i [label="expr"];
+    expr_i -> term_i;
+    term_i [label="term"];
+    term_i -> factor_i;
+    factor_i [label="factor"];
+    factor_i -> loc_i2;
+    loc_i2 [label="loc"];
+    loc_i2 -> id_i3;
+    id_i3 [label="id: i"];
+
+    mas1 [label="+"];
+    term_1 [label="term"];
+    term_1 -> factor_1;
+    factor_1 [label="factor"];
+    factor_1 -> num1;
+    num1 [label="num: 1"];
+
+    bool_ai_v [label="bool"];
+    bool_ai_v -> comb_ai_v;
+    comb_ai_v [label="comb"];
+    comb_ai_v -> igualdad_ai_v;
+    igualdad_ai_v [label="igualdad"];
+    igualdad_ai_v -> rel_ai_v;
+
+    rel_ai_v [label="rel"];
+    rel_ai_v -> expr_ai;
+    rel_ai_v -> menor1;
+    rel_ai_v -> expr_v1;
+
+    menor1 [label="<"];
+
+    expr_ai [label="expr"];
+    expr_ai -> term_ai;
+    term_ai [label="term"];
+    term_ai -> factor_ai;
+    factor_ai [label="factor"];
+    factor_ai -> loc_ai;
+
+    loc_ai [label="loc"];
+    loc_ai -> loc_a1;
+    loc_ai -> corA_ai;
+    loc_ai -> bool_i_arr1;
+    loc_ai -> corC_ai;
+
+    loc_a1 [label="loc"];
+    loc_a1 -> id_a1;
+    id_a1 [label="id: a"];
+    corA_ai [label="["];
+    corC_ai [label="]"];
+
+    bool_i_arr1 [label="bool"];
+    bool_i_arr1 -> expr_i_arr1;
+    expr_i_arr1 [label="expr"];
+    expr_i_arr1 -> term_i_arr1;
+    term_i_arr1 [label="term"];
+    term_i_arr1 -> factor_i_arr1;
+    factor_i_arr1 [label="factor"];
+    factor_i_arr1 -> loc_i_arr1;
+    loc_i_arr1 [label="loc"];
+    loc_i_arr1 -> id_i_arr1;
+    id_i_arr1 [label="id: i"];
+
+    expr_v1 [label="expr"];
+    expr_v1 -> term_v1;
+    term_v1 [label="term"];
+    term_v1 -> factor_v1;
+    factor_v1 [label="factor"];
+    factor_v1 -> loc_v1;
+    loc_v1 [label="loc"];
+    loc_v1 -> id_v1;
+    id_v1 [label="id: v"];
+
+    // do j = j - 1; while (a[j] > v);
+    instr_do2 [label="instr"];
+    instr_do2 -> do_kw2;
+    instr_do2 -> instr_asig_j;
+    instr_do2 -> while_kw_do2;
+    instr_do2 -> parA_do2;
+    instr_do2 -> bool_aj_v;
+    instr_do2 -> parC_do2;
+    instr_do2 -> pcoma_do2;
+
+    do_kw2 [label="do"];
+    while_kw_do2 [label="while"];
+    parA_do2 [label="("];
+    parC_do2 [label=")"];
+    pcoma_do2 [label=";"];
+
+    instr_asig_j [label="instr"];
+    instr_asig_j -> loc_j1;
+    instr_asig_j -> igual2;
+    instr_asig_j -> expr_j_menos_1;
+    instr_asig_j -> pcoma_j1;
+
+    loc_j1 [label="loc"];
+    loc_j1 -> id_j2;
+    id_j2 [label="id: j"];
+
+    igual2 [label="="];
+    pcoma_j1 [label=";"];
+
+    expr_j_menos_1 [label="expr"];
+    expr_j_menos_1 -> expr_j;
+    expr_j_menos_1 -> menos1;
+    expr_j_menos_1 -> term_2;
+
+    expr_j [label="expr"];
+    expr_j -> term_j;
+    term_j [label="term"];
+    term_j -> factor_j;
+    factor_j [label="factor"];
+    factor_j -> loc_j2;
+    loc_j2 [label="loc"];
+    loc_j2 -> id_j3;
+    id_j3 [label="id: j"];
+
+    menos1 [label="-"];
+    term_2 [label="term"];
+    term_2 -> factor_2;
+    factor_2 [label="factor"];
+    factor_2 -> num2;
+    num2 [label="num: 1"];
+
+    bool_aj_v [label="bool"];
+    bool_aj_v -> comb_aj_v;
+    comb_aj_v [label="comb"];
+    comb_aj_v -> igualdad_aj_v;
+    igualdad_aj_v [label="igualdad"];
+    igualdad_aj_v -> rel_aj_v;
+
+    rel_aj_v [label="rel"];
+    rel_aj_v -> expr_aj;
+    rel_aj_v -> mayor1;
+    rel_aj_v -> expr_v2;
+
+    mayor1 [label=">"];
+
+    expr_aj [label="expr"];
+    expr_aj -> term_aj;
+    term_aj [label="term"];
+    term_aj -> factor_aj;
+    factor_aj [label="factor"];
+    factor_aj -> loc_aj;
+
+    loc_aj [label="loc"];
+    loc_aj -> loc_a2;
+    loc_aj -> corA_aj;
+    loc_aj -> bool_j_arr1;
+    loc_aj -> corC_aj;
+
+    loc_a2 [label="loc"];
+    loc_a2 -> id_a2;
+    id_a2 [label="id: a"];
+    corA_aj [label="["];
+    corC_aj [label="]"];
+
+    bool_j_arr1 [label="bool"];
+    bool_j_arr1 -> expr_j_arr1;
+    expr_j_arr1 [label="expr"];
+    expr_j_arr1 -> term_j_arr1;
+    term_j_arr1 [label="term"];
+    term_j_arr1 -> factor_j_arr1;
+    factor_j_arr1 [label="factor"];
+    factor_j_arr1 -> loc_j_arr1;
+    loc_j_arr1 [label="loc"];
+    loc_j_arr1 -> id_j_arr1;
+    id_j_arr1 [label="id: j"];
+
+    expr_v2 [label="expr"];
+    expr_v2 -> term_v2;
+    term_v2 [label="term"];
+    term_v2 -> factor_v2;
+    factor_v2 [label="factor"];
+    factor_v2 -> loc_v2;
+    loc_v2 [label="loc"];
+    loc_v2 -> id_v2;
+    id_v2 [label="id: v"];
+
+    // if (i >= j) break;
+    instr_if [label="instr"];
+    instr_if -> if_kw;
+    instr_if -> parA_if;
+    instr_if -> bool_i_j;
+    instr_if -> parC_if;
+    instr_if -> instr_break;
+
+    if_kw [label="if"];
+    parA_if [label="("];
+    parC_if [label=")"];
+
+    bool_i_j [label="bool"];
+    bool_i_j -> comb_i_j;
+    comb_i_j [label="comb"];
+    comb_i_j -> igualdad_i_j;
+    igualdad_i_j [label="igualdad"];
+    igualdad_i_j -> rel_i_j;
+
+    rel_i_j [label="rel"];
+    rel_i_j -> expr_i_if;
+    rel_i_j -> mayor_igual;
+    rel_i_j -> expr_j_if;
+
+    mayor_igual [label=">="];
+
+    expr_i_if [label="expr"];
+    expr_i_if -> term_i_if;
+    term_i_if [label="term"];
+    term_i_if -> factor_i_if;
+    factor_i_if [label="factor"];
+    factor_i_if -> loc_i_if;
+    loc_i_if [label="loc"];
+    loc_i_if -> id_i_if;
+    id_i_if [label="id: i"];
+
+    expr_j_if [label="expr"];
+    expr_j_if -> term_j_if;
+    term_j_if [label="term"];
+    term_j_if -> factor_j_if;
+    factor_j_if [label="factor"];
+    factor_j_if -> loc_j_if;
+    loc_j_if [label="loc"];
+    loc_j_if -> id_j_if;
+    id_j_if [label="id: j"];
+
+    instr_break [label="instr"];
+    instr_break -> break_kw;
+    instr_break -> pcoma_break;
+
+    break_kw [label="break"];
+    pcoma_break [label=";"];
+
+    // x = a[i];
+    instr_swap1 [label="instr"];
+    instr_swap1 -> loc_x;
+    instr_swap1 -> igual3;
+    instr_swap1 -> expr_ai_swap;
+    instr_swap1 -> pcoma_swap1;
+
+    loc_x [label="loc"];
+    loc_x -> id_x1;
+    id_x1 [label="id: x"];
+    igual3 [label="="];
+    pcoma_swap1 [label=";"];
+
+    expr_ai_swap [label="expr"];
+    expr_ai_swap -> term_ai_swap;
+    term_ai_swap [label="term"];
+    term_ai_swap -> factor_ai_swap;
+    factor_ai_swap [label="factor"];
+    factor_ai_swap -> loc_ai_swap;
+
+    loc_ai_swap [label="loc"];
+    loc_ai_swap -> loc_a_swap1;
+    loc_ai_swap -> corA_swap1;
+    loc_ai_swap -> bool_i_swap1;
+    loc_ai_swap -> corC_swap1;
+
+    loc_a_swap1 [label="loc"];
+    loc_a_swap1 -> id_a_swap1;
+    id_a_swap1 [label="id: a"];
+    corA_swap1 [label="["];
+    corC_swap1 [label="]"];
+
+    bool_i_swap1 [label="bool"];
+    bool_i_swap1 -> expr_i_swap1;
+    expr_i_swap1 [label="expr"];
+    expr_i_swap1 -> term_i_swap1;
+    term_i_swap1 [label="term"];
+    term_i_swap1 -> factor_i_swap1;
+    factor_i_swap1 [label="factor"];
+    factor_i_swap1 -> loc_i_swap1;
+    loc_i_swap1 [label="loc"];
+    loc_i_swap1 -> id_i_swap1;
+    id_i_swap1 [label="id: i"];
+
+    // a[i] = a[j];
+    instr_swap2 [label="instr"];
+    instr_swap2 -> loc_ai_left;
+    instr_swap2 -> igual4;
+    instr_swap2 -> expr_aj_swap;
+    instr_swap2 -> pcoma_swap2;
+
+    igual4 [label="="];
+    pcoma_swap2 [label=";"];
+
+    loc_ai_left [label="loc"];
+    loc_ai_left -> loc_a_left1;
+    loc_ai_left -> corA_left1;
+    loc_ai_left -> bool_i_left1;
+    loc_ai_left -> corC_left1;
+
+    loc_a_left1 [label="loc"];
+    loc_a_left1 -> id_a_left1;
+    id_a_left1 [label="id: a"];
+    corA_left1 [label="["];
+    corC_left1 [label="]"];
+
+    bool_i_left1 [label="bool"];
+    bool_i_left1 -> expr_i_left1;
+    expr_i_left1 [label="expr"];
+    expr_i_left1 -> term_i_left1;
+    term_i_left1 [label="term"];
+    term_i_left1 -> factor_i_left1;
+    factor_i_left1 [label="factor"];
+    factor_i_left1 -> loc_i_left1;
+    loc_i_left1 [label="loc"];
+    loc_i_left1 -> id_i_left1;
+    id_i_left1 [label="id: i"];
+
+    expr_aj_swap [label="expr"];
+    expr_aj_swap -> term_aj_swap;
+    term_aj_swap [label="term"];
+    term_aj_swap -> factor_aj_swap;
+    factor_aj_swap [label="factor"];
+    factor_aj_swap -> loc_aj_swap;
+
+    loc_aj_swap [label="loc"];
+    loc_aj_swap -> loc_a_swap2;
+    loc_aj_swap -> corA_swap2;
+    loc_aj_swap -> bool_j_swap2;
+    loc_aj_swap -> corC_swap2;
+
+    loc_a_swap2 [label="loc"];
+    loc_a_swap2 -> id_a_swap2;
+    id_a_swap2 [label="id: a"];
+    corA_swap2 [label="["];
+    corC_swap2 [label="]"];
+
+    bool_j_swap2 [label="bool"];
+    bool_j_swap2 -> expr_j_swap2;
+    expr_j_swap2 [label="expr"];
+    expr_j_swap2 -> term_j_swap2;
+    term_j_swap2 [label="term"];
+    term_j_swap2 -> factor_j_swap2;
+    factor_j_swap2 [label="factor"];
+    factor_j_swap2 -> loc_j_swap2;
+    loc_j_swap2 [label="loc"];
+    loc_j_swap2 -> id_j_swap2;
+    id_j_swap2 [label="id: j"];
+
+    // a[j] = x;
+    instr_swap3 [label="instr"];
+    instr_swap3 -> loc_aj_left;
+    instr_swap3 -> igual5;
+    instr_swap3 -> expr_x;
+    instr_swap3 -> pcoma_swap3;
+
+    igual5 [label="="];
+    pcoma_swap3 [label=";"];
+
+    loc_aj_left [label="loc"];
+    loc_aj_left -> loc_a_left2;
+    loc_aj_left -> corA_left2;
+    loc_aj_left -> bool_j_left2;
+    loc_aj_left -> corC_left2;
+
+    loc_a_left2 [label="loc"];
+    loc_a_left2 -> id_a_left2;
+    id_a_left2 [label="id: a"];
+    corA_left2 [label="["];
+    corC_left2 [label="]"];
+
+    bool_j_left2 [label="bool"];
+    bool_j_left2 -> expr_j_left2;
+    expr_j_left2 [label="expr"];
+    expr_j_left2 -> term_j_left2;
+    term_j_left2 [label="term"];
+    term_j_left2 -> factor_j_left2;
+    factor_j_left2 [label="factor"];
+    factor_j_left2 -> loc_j_left2;
+    loc_j_left2 [label="loc"];
+    loc_j_left2 -> id_j_left2;
+    id_j_left2 [label="id: j"];
+
+    expr_x [label="expr"];
+    expr_x -> term_x;
+    term_x [label="term"];
+    term_x -> factor_x;
+    factor_x [label="factor"];
+    factor_x -> loc_x2;
+    loc_x2 [label="loc"];
+    loc_x2 -> id_x2;
+    id_x2 [label="id: x"];
+}
