@@ -1,0 +1,168 @@
+Digraph ArbolCompleto {
+    node [shape=plaintext, fontname="Helvetica", fontsize=10];
+    edge [arrowsize=0.5];
+
+    n_prog [label="programa"];
+    n_bloque1 [label="bloque"];
+    n_prog -> n_bloque1;
+
+    l_abre1 [label="{", shape=box, fontname="Courier"];
+    n_decls1 [label="decls"];
+    n_instrs1 [label="instrs"];
+    l_cierra1 [label="}", shape=box, fontname="Courier"];
+    n_bloque1 -> {l_abre1, n_decls1, n_instrs1, l_cierra1};
+
+    d_4 [label="decls"]; d_decl5 [label="decl"]; n_decls1 -> {d_4, d_decl5};
+    d_3 [label="decls"]; d_decl4 [label="decl"]; d_4 -> {d_3, d_decl4};
+    d_2 [label="decls"]; d_decl3 [label="decl"]; d_3 -> {d_2, d_decl3};
+    d_1 [label="decls"]; d_decl2 [label="decl"]; d_2 -> {d_1, d_decl2};
+    d_0 [label="decls"]; d_decl1 [label="decl"]; d_1 -> {d_0, d_decl1};
+    d_eps [label="ε"]; d_0 -> d_eps;
+
+    t1 [label="tipo"]; id1 [label="id"]; pc1 [label=";", shape=box, fontname="Courier"];
+    b1 [label="basico"]; v_int1 [label="int", shape=box, fontname="Courier"];
+    v_i [label="i", shape=box, fontname="Courier", style=filled, fillcolor=lightyellow];
+    d_decl1 -> {t1, id1, pc1}; t1 -> b1 -> v_int1; id1 -> v_i;
+
+    t2 [label="tipo"]; id2 [label="id"]; pc2 [label=";", shape=box, fontname="Courier"];
+    b2 [label="basico"]; v_int2 [label="int", shape=box, fontname="Courier"];
+    v_j [label="j", shape=box, fontname="Courier", style=filled, fillcolor=lightyellow];
+    d_decl2 -> {t2, id2, pc2}; t2 -> b2 -> v_int2; id2 -> v_j;
+
+    t3 [label="tipo"]; id3 [label="id"]; pc3 [label=";", shape=box, fontname="Courier"];
+    b3 [label="basico"]; v_flt3 [label="float", shape=box, fontname="Courier"];
+    v_v [label="v", shape=box, fontname="Courier", style=filled, fillcolor=lightyellow];
+    d_decl3 -> {t3, id3, pc3}; t3 -> b3 -> v_flt3; id3 -> v_v;
+
+    t4 [label="tipo"]; id4 [label="id"]; pc4 [label=";", shape=box, fontname="Courier"];
+    b4 [label="basico"]; v_flt4 [label="float", shape=box, fontname="Courier"];
+    v_x [label="x", shape=box, fontname="Courier", style=filled, fillcolor=lightyellow];
+    d_decl4 -> {t4, id4, pc4}; t4 -> b4 -> v_flt4; id4 -> v_x;
+
+    t5 [label="tipo"]; id5 [label="id"]; pc5 [label=";", shape=box, fontname="Courier"];
+    t5b [label="tipo"]; cor1 [label="[", shape=box, fontname="Courier"]; num5 [label="num"]; cor2 [label="]", shape=box, fontname="Courier"];
+    b5 [label="basico"]; v_flt5 [label="float", shape=box, fontname="Courier"];
+    v_100 [label="100", shape=box, fontname="Courier"]; v_a [label="a", shape=box, fontname="Courier", style=filled, fillcolor=lightyellow];
+    d_decl5 -> {t5, id5, pc5}; t5 -> {t5b, cor1, num5, cor2}; t5b -> b5 -> v_flt5; num5 -> v_100; id5 -> v_a;
+
+    i_0 [label="instrs"]; i_eps1 [label="ε"];
+    i_w [label="instr"];
+    n_instrs1 -> {i_0, i_w}; i_0 -> i_eps1;
+
+    kw_w [label="while", shape=box, fontname="Courier", style=filled, fillcolor=pink];
+    pA_w [label="(", shape=box, fontname="Courier"];
+    bool_w [label="bool"];
+    pC_w [label=")", shape=box, fontname="Courier"];
+    instr_in [label="instr"];
+    i_w -> {kw_w, pA_w, bool_w, pC_w, instr_in};
+
+    cw[label="comb"]; igw[label="igualdad"]; rw[label="rel"]; ew[label="expr"]; tw[label="term"]; uw[label="unario"]; fw[label="factor"]; kw_true[label="true", shape=box, fontname="Courier", style=filled, fillcolor=lightblue];
+    bool_w -> cw -> igw -> rw -> ew -> tw -> uw -> fw -> kw_true;
+
+    b_in [label="bloque"];
+    instr_in -> b_in;
+
+    l_abre2 [label="{", shape=box, fontname="Courier"];
+    d_in [label="decls"]; d_eps_in [label="ε"];
+    i_in_tot [label="instrs"];
+    l_cierra2 [label="}", shape=box, fontname="Courier"];
+    b_in -> {l_abre2, d_in, i_in_tot, l_cierra2};
+    d_in -> d_eps_in;
+
+    in_lista1 [label="instrs"];
+    in_do1 [label="instr"];
+    in_do2 [label="instr"];
+    
+    i_in_tot -> {in_lista1, in_do2};
+    in_lista1_0 [label="instrs"]; 
+    in_lista1 -> {in_lista1_0, in_do1};
+    in_eps_final [label="ε"];
+    in_lista1_0 -> in_eps_final;
+
+    kw_do1 [label="do", shape=box, fontname="Courier", style=filled, fillcolor=pink];
+    instr_asig1 [label="instr"];
+    kw_while1 [label="while", shape=box, fontname="Courier", style=filled, fillcolor=pink];
+    pA_d1 [label="(", shape=box, fontname="Courier"];
+    bool_d1 [label="bool"];
+    pC_d1 [label=")", shape=box, fontname="Courier"];
+    pc_d1 [label=";", shape=box, fontname="Courier"];
+    in_do1 -> {kw_do1, instr_asig1, kw_while1, pA_d1, bool_d1, pC_d1, pc_d1};
+
+    loc_as1 [label="loc"]; id_as1 [label="id"]; var_i1 [label="i", shape=box, fontname="Courier"];
+    ig_as1 [label="=", shape=box, fontname="Courier"];
+    bool_as1 [label="bool"]; pc_as1 [label=";", shape=box, fontname="Courier"];
+    instr_asig1 -> {loc_as1, ig_as1, bool_as1, pc_as1};
+    loc_as1 -> id_as1 -> var_i1;
+
+    c_as1[label="comb"]; ig_as1b[label="igualdad"]; r_as1[label="rel"]; e_as1[label="expr"];
+    e_as1_izq[label="expr"]; mas1[label="+", shape=box, fontname="Courier"]; t_as1_der[label="term"];
+    bool_as1 -> c_as1 -> ig_as1b -> r_as1 -> e_as1;
+    e_as1 -> {e_as1_izq, mas1, t_as1_der};
+    
+    t_as1_i[label="term"]; u_as1_i[label="unario"]; f_as1_i[label="factor"]; loc_i_op[label="loc"]; id_i_op[label="id"]; val_i_op[label="i", shape=box, fontname="Courier"];
+    e_as1_izq -> t_as1_i -> u_as1_i -> f_as1_i -> loc_i_op -> id_i_op -> val_i_op;
+    
+    u_as1_1[label="unario"]; f_as1_1[label="factor"]; num_as1_1[label="num"]; val_1_op[label="1", shape=box, fontname="Courier"];
+    t_as1_der -> u_as1_1 -> f_as1_1 -> num_as1_1 -> val_1_op;
+
+    c_d1[label="comb"]; ig_d1[label="igualdad"]; r_d1[label="rel"]; 
+    bool_d1 -> c_d1 -> ig_d1 -> r_d1;
+    
+    e_d1_izq[label="expr"]; menor1[label="<", shape=box, fontname="Courier"]; e_d1_der[label="expr"];
+    r_d1 -> {e_d1_izq, menor1, e_d1_der};
+
+    t_d1_izq[label="term"]; u_d1_izq[label="unario"]; f_d1_izq[label="factor"]; loc_d1_izq[label="loc"];
+    e_d1_izq -> t_d1_izq -> u_d1_izq -> f_d1_izq -> loc_d1_izq;
+    loc_arr1[label="loc"]; cA1[label="[", shape=box, fontname="Courier"]; bool_arr1[label="bool"]; cC1[label="]", shape=box, fontname="Courier"];
+    loc_d1_izq -> {loc_arr1, cA1, bool_arr1, cC1};
+    id_arr1[label="id"]; val_a1[label="a", shape=box, fontname="Courier"]; loc_arr1 -> id_arr1 -> val_a1;
+    c_arr1[label="comb"]; ig_arr1[label="igualdad"]; r_arr1[label="rel"]; e_arr1[label="expr"]; t_arr1[label="term"]; u_arr1[label="unario"]; f_arr1[label="factor"]; loc_arr1_i[label="loc"]; id_arr1_i[label="id"]; val_i_arr1[label="i", shape=box, fontname="Courier"];
+    bool_arr1 -> c_arr1 -> ig_arr1 -> r_arr1 -> e_arr1 -> t_arr1 -> u_arr1 -> f_arr1 -> loc_arr1_i -> id_arr1_i -> val_i_arr1;
+
+    t_d1_der[label="term"]; u_d1_der[label="unario"]; f_d1_der[label="factor"]; loc_d1_der[label="loc"]; id_d1_v[label="id"]; val_v_op[label="v", shape=box, fontname="Courier"];
+    e_d1_der -> t_d1_der -> u_d1_der -> f_d1_der -> loc_d1_der -> id_d1_v -> val_v_op;
+
+    kw_do2 [label="do", shape=box, fontname="Courier", style=filled, fillcolor=pink];
+    instr_asig2 [label="instr"];
+    kw_while2 [label="while", shape=box, fontname="Courier", style=filled, fillcolor=pink];
+    pA_d2 [label="(", shape=box, fontname="Courier"];
+    bool_d2 [label="bool"];
+    pC_d2 [label=")", shape=box, fontname="Courier"];
+    pc_d2 [label=";", shape=box, fontname="Courier"];
+    in_do2 -> {kw_do2, instr_asig2, kw_while2, pA_d2, bool_d2, pC_d2, pc_d2};
+
+    loc_as2 [label="loc"]; id_as2 [label="id"]; var_j2 [label="j", shape=box, fontname="Courier"];
+    ig_as2 [label="=", shape=box, fontname="Courier"];
+    bool_as2 [label="bool"]; pc_as2 [label=";", shape=box, fontname="Courier"];
+    instr_asig2 -> {loc_as2, ig_as2, bool_as2, pc_as2};
+    loc_as2 -> id_as2 -> var_j2;
+
+    c_as2[label="comb"]; ig_as2b[label="igualdad"]; r_as2[label="rel"]; e_as2[label="expr"];
+    e_as2_izq[label="expr"]; menos2[label="-", shape=box, fontname="Courier"]; t_as2_der[label="term"];
+    bool_as2 -> c_as2 -> ig_as2b -> r_as2 -> e_as2;
+    e_as2 -> {e_as2_izq, menos2, t_as2_der};
+    
+    t_as2_j[label="term"]; u_as2_j[label="unario"]; f_as2_j[label="factor"]; loc_j_op[label="loc"]; id_j_op[label="id"]; val_j_op[label="j", shape=box, fontname="Courier"];
+    e_as2_izq -> t_as2_j -> u_as2_j -> f_as2_j -> loc_j_op -> id_j_op -> val_j_op;
+    
+    u_as2_1[label="unario"]; f_as2_1[label="factor"]; num_as2_1[label="num"]; val_1_op2[label="1", shape=box, fontname="Courier"];
+    t_as2_der -> u_as2_1 -> f_as2_1 -> num_as2_1 -> val_1_op2;
+
+    c_d2[label="comb"]; ig_d2[label="igualdad"]; r_d2[label="rel"]; 
+    bool_d2 -> c_d2 -> ig_d2 -> r_d2;
+    
+    e_d2_izq[label="expr"]; mayor2[label=">", shape=box, fontname="Courier"]; e_d2_der[label="expr"];
+    r_d2 -> {e_d2_izq, mayor2, e_d2_der};
+
+    t_d2_izq[label="term"]; u_d2_izq[label="unario"]; f_d2_izq[label="factor"]; loc_d2_izq[label="loc"];
+    e_d2_izq -> t_d2_izq -> u_d2_izq -> f_d2_izq -> loc_d2_izq;
+    loc_arr2[label="loc"]; cA2[label="[", shape=box, fontname="Courier"]; bool_arr2[label="bool"]; cC2[label="]", shape=box, fontname="Courier"];
+    loc_d2_izq -> {loc_arr2, cA2, bool_arr2, cC2};
+    id_arr2[label="id"]; val_a2[label="a", shape=box, fontname="Courier"]; loc_arr2 -> id_arr2 -> val_a2;
+    
+    c_arr2[label="comb"]; ig_arr2[label="igualdad"]; r_arr2[label="rel"]; e_arr2[label="expr"]; t_arr2[label="term"]; u_arr2[label="unario"]; f_arr2[label="factor"]; loc_arr2_j[label="loc"]; id_arr2_j[label="id"]; val_j_arr2[label="j", shape=box, fontname="Courier"];
+    bool_arr2 -> c_arr2 -> ig_arr2 -> r_arr2 -> e_arr2 -> t_arr2 -> u_arr2 -> f_arr2 -> loc_arr2_j -> id_arr2_j -> val_j_arr2;
+
+    t_d2_der[label="term"]; u_d2_der[label="unario"]; f_d2_der[label="factor"]; loc_d2_der[label="loc"]; id_d2_v[label="id"]; val_v_op2[label="v", shape=box, fontname="Courier"];
+    e_d2_der -> t_d2_der -> u_d2_der -> f_d2_der -> loc_d2_der -> id_d2_v -> val_v_op2;
+}
