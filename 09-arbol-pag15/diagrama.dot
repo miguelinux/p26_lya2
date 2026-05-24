@@ -1,0 +1,467 @@
+digraph ArbolDerivacionMaestro {
+
+    rankdir=TB;
+
+    node [shape=none, fontname="Courier", fontsize=10];
+
+    edge [arrowhead=none, color=gray60];
+
+    n0 [label="programa"];
+    n1 [label="bloque"];
+
+    n0 -> n1;
+
+    n1 -> n_llave1;
+    n1 -> n_decls_raiz;
+    n1 -> n_instrs_raiz;
+    n1 -> n_llave2;
+
+    n_llave1 [label="{"];
+    n_llave2 [label="}"];
+
+    n_decls_0 [label="ε"];
+
+    n_decls_raiz -> n_decls_4;
+    n_decls_raiz -> n_decl_5;
+
+    n_decls_4 -> n_decls_3;
+    n_decls_4 -> n_decl_4;
+
+    n_decls_3 -> n_decls_2;
+    n_decls_3 -> n_decl_3;
+
+    n_decls_2 -> n_decls_1;
+    n_decls_2 -> n_decl_2;
+
+    n_decls_1 -> n_decls_0;
+    n_decls_1 -> n_decl_1;
+
+    n_decl_1 [label="decl"];
+    n_decl_2 [label="decl"];
+    n_decl_3 [label="decl"];
+    n_decl_4 [label="decl"];
+    n_decl_5 [label="decl"];
+
+    n_decl_1 -> n_t1;
+    n_decl_1 -> n_id1;
+    n_decl_1 -> n_pyc1;
+
+    n_t1 [label="tipo"];
+    n_t1 -> n_basico1;
+
+    n_basico1 [label="basico"];
+    n_id1 [label="id"];
+    n_pyc1 [label=";"];
+
+    n_decl_2 -> n_t2;
+    n_decl_2 -> n_id2;
+    n_decl_2 -> n_pyc2;
+
+    n_t2 [label="tipo"];
+    n_t2 -> n_basico2;
+
+    n_basico2 [label="basico"];
+    n_id2 [label="id"];
+    n_pyc2 [label=";"];
+
+    n_decl_3 -> n_t3;
+    n_decl_3 -> n_id3;
+    n_decl_3 -> n_pyc3;
+
+    n_t3 [label="tipo"];
+    n_t3 -> n_basico3;
+
+    n_basico3 [label="basico"];
+    n_id3 [label="id"];
+    n_pyc3 [label=";"];
+
+    n_decl_4 -> n_t4;
+    n_decl_4 -> n_id4;
+    n_decl_4 -> n_pyc4;
+
+    n_t4 [label="tipo"];
+    n_t4 -> n_basico4;
+
+    n_basico4 [label="basico"];
+    n_id4 [label="id"];
+    n_pyc4 [label=";"];
+
+    n_decl_5 -> n_t5;
+    n_decl_5 -> n_id5;
+    n_decl_5 -> n_pyc5;
+
+    n_t5 [label="tipo"];
+    n_t5 -> n_t5_inner;
+    n_t5 -> n_cor1;
+    n_t5 -> n_num1;
+    n_t5 -> n_cor2;
+
+    n_t5_inner [label="tipo"];
+    n_t5_inner -> n_basico5;
+
+    n_basico5 [label="basico"];
+    n_cor1 [label="["];
+    n_num1 [label="num"];
+    n_cor2 [label="]"];
+
+    n_id5 [label="id"];
+    n_pyc5 [label=";"];
+
+    n_instrs_raiz -> n_instrs_eps;
+    n_instrs_raiz -> n_instr_while;
+
+    n_instrs_eps [label="ε"];
+
+    n_instr_while [label="instr"];
+
+    n_instr_while -> n_while;
+    n_instr_while -> n_par1;
+    n_instr_while -> n_bool_w;
+    n_instr_while -> n_par2;
+    n_instr_while -> n_instr_bloque_w;
+
+    n_while [label="while"];
+    n_par1 [label="("];
+    n_par2 [label=")"];
+
+    n_bool_w -> n_comb_w;
+    n_comb_w -> n_igual_w;
+    n_igual_w -> n_rel_w;
+    n_rel_w -> n_expr_w;
+    n_expr_w -> n_term_w;
+    n_term_w -> n_unario_w;
+    n_unario_w -> n_factor_w;
+
+    n_factor_w -> n_true;
+
+    n_true [label="true"];
+
+    n_instr_bloque_w -> n_bloque_int;
+
+    n_bloque_int -> n_llave3;
+    n_bloque_int -> n_decls_int;
+    n_bloque_int -> n_instrs_int;
+    n_bloque_int -> n_llave4;
+
+    n_llave3 [label="{"];
+    n_llave4 [label="}"];
+
+    n_decls_int [label="ε"];
+
+    n_instrs_int -> n_ins_i5;
+    n_instrs_int -> n_instr_final;
+
+    n_ins_i5 -> n_ins_i4;
+    n_ins_i5 -> n_instr_a2;
+
+    n_ins_i4 -> n_ins_i3;
+    n_ins_i4 -> n_instr_a1;
+
+    n_ins_i3 -> n_ins_i2;
+    n_ins_i3 -> n_instr_if;
+
+    n_ins_i2 -> n_ins_i1;
+    n_ins_i2 -> n_instr_do2;
+
+    n_ins_i1 -> n_ins_eps2;
+    n_ins_i1 -> n_instr_do1;
+
+    n_ins_eps2 [label="ε"];
+
+    n_instr_do1 -> n_do;
+    n_instr_do1 -> n_do_ins;
+    n_instr_do1 -> n_while2;
+    n_instr_do1 -> n_par3;
+    n_instr_do1 -> n_do_bool;
+    n_instr_do1 -> n_par4;
+    n_instr_do1 -> n_pyc6;
+
+    n_do [label="do"];
+    n_while2 [label="while"];
+    n_par3 [label="("];
+    n_par4 [label=")"];
+    n_pyc6 [label=";"];
+
+    n_do_ins -> n_loc_i;
+    n_do_ins -> n_igual1;
+    n_do_ins -> n_bool_asig;
+    n_do_ins -> n_pyc7;
+
+    n_igual1 [label="="];
+    n_pyc7 [label=";"];
+
+    n_loc_i -> n_id6;
+
+    n_id6 [label="id"];
+
+    n_bool_asig -> n_comb_a;
+    n_comb_a -> n_igual_a;
+    n_igual_a -> n_rel_a;
+    n_rel_a -> n_expr_a;
+
+    n_expr_a -> n_expr_left;
+    n_expr_a -> n_mas1;
+    n_expr_a -> n_term_right;
+
+    n_mas1 [label="+"];
+
+    n_expr_left -> n_term_l;
+    n_term_l -> n_unario_l;
+    n_unario_l -> n_factor_l;
+    n_factor_l -> n_loc_l;
+    n_loc_l -> n_id7;
+
+    n_id7 [label="id"];
+
+    n_term_right -> n_unario_r;
+    n_unario_r -> n_factor_r;
+    n_factor_r -> n_num2;
+
+    n_num2 [label="num"];
+
+    n_do_bool -> n_comb_c;
+    n_comb_c -> n_igual_c;
+    n_igual_c -> n_rel_c;
+
+    n_rel_c -> n_expr_c1;
+    n_rel_c -> n_menor1;
+    n_rel_c -> n_expr_c2;
+
+    n_menor1 [label="<"];
+
+    n_expr_c1 -> n_term_c1;
+    n_term_c1 -> n_unario_c1;
+    n_unario_c1 -> n_factor_c1;
+    n_factor_c1 -> n_loc_c1;
+
+    n_loc_c1 -> n_id8;
+    n_loc_c1 -> n_cor3;
+    n_loc_c1 -> n_bool_ind;
+    n_loc_c1 -> n_cor4;
+
+    n_id8 [label="id"];
+    n_cor3 [label="["];
+    n_cor4 [label="]"];
+
+    n_bool_ind -> n_comb_ind;
+    n_comb_ind -> n_igual_ind;
+    n_igual_ind -> n_rel_ind;
+    n_rel_ind -> n_expr_ind;
+    n_expr_ind -> n_term_ind;
+    n_term_ind -> n_unario_ind;
+    n_unario_ind -> n_factor_ind;
+    n_factor_ind -> n_loc_ind;
+
+    n_loc_ind -> n_id9;
+
+    n_id9 [label="id"];
+
+    n_expr_c2 -> n_term_c2;
+    n_term_c2 -> n_unario_c2;
+    n_unario_c2 -> n_factor_c2;
+    n_factor_c2 -> n_loc_c2;
+
+    n_loc_c2 -> n_id10;
+
+    n_id10 [label="id"];
+
+    n_instr_if [label="instr(if)"];
+    n_instr_a1 [label="instr(x=a[i])"];
+    n_instr_a2 [label="instr(a[i]=a[j])"];
+    n_instr_do2 [label="instr(do j)"];
+    n_instr_final [label="instr(a[j]=x)"];
+        n_instr_if -> n_if_kw;
+    n_instr_if -> n_par_if1;
+    n_instr_if -> n_bool_if;
+    n_instr_if -> n_par_if2;
+    n_instr_if -> n_break_instr;
+
+    n_if_kw [label="if"];
+    n_par_if1 [label="("];
+    n_par_if2 [label=")"];
+
+    n_bool_if -> n_comb_if;
+    n_comb_if -> n_igual_if;
+    n_igual_if -> n_rel_if;
+
+    n_rel_if -> n_expr_if1;
+    n_rel_if -> n_mayor_if;
+    n_rel_if -> n_expr_if2;
+
+    n_mayor_if [label=">"];
+
+    n_expr_if1 -> n_term_if1;
+    n_term_if1 -> n_unario_if1;
+    n_unario_if1 -> n_factor_if1;
+    n_factor_if1 -> n_loc_if1;
+
+    n_loc_if1 -> n_id_if1;
+    n_loc_if1 -> n_cor_if1;
+    n_loc_if1 -> n_bool_if_ind1;
+    n_loc_if1 -> n_cor_if2;
+
+    n_id_if1 [label="id"];
+    n_cor_if1 [label="["];
+    n_cor_if2 [label="]"];
+
+    n_bool_if_ind1 -> n_comb_if_ind1;
+    n_comb_if_ind1 -> n_igual_if_ind1;
+    n_igual_if_ind1 -> n_rel_if_ind1;
+    n_rel_if_ind1 -> n_expr_if_ind1;
+    n_expr_if_ind1 -> n_term_if_ind1;
+    n_term_if_ind1 -> n_unario_if_ind1;
+    n_unario_if_ind1 -> n_factor_if_ind1;
+    n_factor_if_ind1 -> n_loc_if_ind1;
+
+    n_loc_if_ind1 -> n_id_if_ind1;
+
+    n_id_if_ind1 [label="id"];
+
+    n_expr_if2 -> n_term_if2;
+    n_term_if2 -> n_unario_if2;
+    n_unario_if2 -> n_factor_if2;
+    n_factor_if2 -> n_loc_if2;
+
+    n_loc_if2 -> n_id_if2;
+    n_loc_if2 -> n_cor_if3;
+    n_loc_if2 -> n_bool_if_ind2;
+    n_loc_if2 -> n_cor_if4;
+
+    n_id_if2 [label="id"];
+    n_cor_if3 [label="["];
+    n_cor_if4 [label="]"];
+
+    n_bool_if_ind2 -> n_comb_if_ind2;
+    n_comb_if_ind2 -> n_igual_if_ind2;
+    n_igual_if_ind2 -> n_rel_if_ind2;
+    n_rel_if_ind2 -> n_expr_if_ind2;
+    n_expr_if_ind2 -> n_term_if_ind2;
+    n_term_if_ind2 -> n_unario_if_ind2;
+    n_unario_if_ind2 -> n_factor_if_ind2;
+    n_factor_if_ind2 -> n_loc_if_ind2;
+
+    n_loc_if_ind2 -> n_id_if_ind2;
+
+    n_id_if_ind2 [label="id"];
+
+    n_break_instr -> n_break_kw;
+    n_break_instr -> n_break_pyc;
+
+    n_break_kw [label="break"];
+    n_break_pyc [label=";"];
+
+
+
+
+
+    n_instr_a1 -> n_loc_a1;
+    n_instr_a1 -> n_igual_a1;
+    n_instr_a1 -> n_bool_a1;
+    n_instr_a1 -> n_pyc_a1;
+
+    n_igual_a1 [label="="];
+    n_pyc_a1 [label=";"];
+
+    n_loc_a1 -> n_id_a1;
+
+    n_id_a1 [label="id"];
+
+    n_bool_a1 -> n_comb_a1;
+    n_comb_a1 -> n_igualdad_a1;
+    n_igualdad_a1 -> n_rel_a1;
+    n_rel_a1 -> n_expr_a1;
+
+    n_expr_a1 -> n_term_a1;
+    n_term_a1 -> n_unario_a1;
+    n_unario_a1 -> n_factor_a1;
+    n_factor_a1 -> n_loc_arr1;
+
+    n_loc_arr1 -> n_id_arr1;
+    n_loc_arr1 -> n_cor_arr1;
+    n_loc_arr1 -> n_bool_arr1;
+    n_loc_arr1 -> n_cor_arr2;
+
+    n_id_arr1 [label="id"];
+    n_cor_arr1 [label="["];
+    n_cor_arr2 [label="]"];
+
+    n_bool_arr1 -> n_comb_arr1;
+    n_comb_arr1 -> n_igual_arr1;
+    n_igual_arr1 -> n_rel_arr1;
+    n_rel_arr1 -> n_expr_arr1;
+    n_expr_arr1 -> n_term_arr1;
+    n_term_arr1 -> n_unario_arr1;
+    n_unario_arr1 -> n_factor_arr1;
+    n_factor_arr1 -> n_loc_arr_ind1;
+
+    n_loc_arr_ind1 -> n_id_arr_ind1;
+
+    n_id_arr_ind1 [label="id"];
+
+
+
+
+
+    n_instr_a2 -> n_loc_left_a2;
+    n_instr_a2 -> n_igual_a2;
+    n_instr_a2 -> n_bool_right_a2;
+    n_instr_a2 -> n_pyc_a2;
+
+    n_igual_a2 [label="="];
+    n_pyc_a2 [label=";"];
+
+    n_loc_left_a2 -> n_id_left_a2;
+    n_loc_left_a2 -> n_cor_left_a2_1;
+    n_loc_left_a2 -> n_bool_left_a2;
+    n_loc_left_a2 -> n_cor_left_a2_2;
+
+    n_id_left_a2 [label="id"];
+    n_cor_left_a2_1 [label="["];
+    n_cor_left_a2_2 [label="]"];
+
+    n_bool_left_a2 -> n_comb_left_a2;
+    n_comb_left_a2 -> n_igual_left_a2;
+    n_igual_left_a2 -> n_rel_left_a2;
+    n_rel_left_a2 -> n_expr_left_a2;
+    n_expr_left_a2 -> n_term_left_a2;
+    n_term_left_a2 -> n_unario_left_a2;
+    n_unario_left_a2 -> n_factor_left_a2;
+    n_factor_left_a2 -> n_loc_left_ind_a2;
+
+    n_loc_left_ind_a2 -> n_id_left_ind_a2;
+
+    n_id_left_ind_a2 [label="id"];
+
+    n_bool_right_a2 -> n_comb_right_a2;
+    n_comb_right_a2 -> n_igual_right_a2;
+    n_igual_right_a2 -> n_rel_right_a2;
+    n_rel_right_a2 -> n_expr_right_a2;
+
+    n_expr_right_a2 -> n_term_right_a2;
+    n_term_right_a2 -> n_unario_right_a2;
+    n_unario_right_a2 -> n_factor_right_a2;
+    n_factor_right_a2 -> n_loc_right_arr_a2;
+
+    n_loc_right_arr_a2 -> n_id_right_arr_a2;
+    n_loc_right_arr_a2 -> n_cor_right_a2_1;
+    n_loc_right_arr_a2 -> n_bool_right_ind_a2;
+    n_loc_right_arr_a2 -> n_cor_right_a2_2;
+
+    n_id_right_arr_a2 [label="id"];
+    n_cor_right_a2_1 [label="["];
+    n_cor_right_a2_2 [label="]"];
+
+    n_bool_right_ind_a2 -> n_comb_right_ind_a2;
+    n_comb_right_ind_a2 -> n_igual_right_ind_a2;
+    n_igual_right_ind_a2 -> n_rel_right_ind_a2;
+    n_rel_right_ind_a2 -> n_expr_right_ind_a2;
+    n_expr_right_ind_a2 -> n_term_right_ind_a2;
+    n_term_right_ind_a2 -> n_unario_right_ind_a2;
+    n_unario_right_ind_a2 -> n_factor_right_ind_a2;
+    n_factor_right_ind_a2 -> n_loc_right_ind_a2;
+
+    n_loc_right_ind_a2 -> n_id_right_ind_a2;
+
+    n_id_right_ind_a2 [label="id"];
+
+}
