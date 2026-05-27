@@ -1,0 +1,252 @@
+digraph ""
+{
+node [fontsize=10,width=".4", height=".4", margin=0];
+graph[fontsize=2];
+
+// ===== PROGRAMA =====
+n001 [label="programa"];
+n002 [label="bloque"];
+n001 -> n002;
+
+// ===== BLOQUE =====
+n003 [label="{"];
+n004 [label="decls"];
+n005 [label="instrs"];
+n006 [label="}"];
+
+n002 -> n003;
+n002 -> n004;
+n002 -> n005;
+n002 -> n006;
+
+////////////////////////////////////////////////////////////
+// ===== DECLARACIONES =====
+
+// int i;
+n010 [label="decl"]; n004 -> n010;
+n011 [label="tipo"]; n012 [label="id"]; n013 [label=";"];
+n010 -> n011; n010 -> n012; n010 -> n013;
+n014 [label="int"]; n011 -> n014;
+n015 [label="i"]; n012 -> n015;
+
+// int j;
+n020 [label="decl"]; n004 -> n020;
+n021 [label="tipo"]; n022 [label="id"]; n023 [label=";"];
+n020 -> n021; n020 -> n022; n020 -> n023;
+n024 [label="int"]; n021 -> n024;
+n025 [label="j"]; n022 -> n025;
+
+// float v;
+n030 [label="decl"]; n004 -> n030;
+n031 [label="tipo"]; n032 [label="id"]; n033 [label=";"];
+n030 -> n031; n030 -> n032; n030 -> n033;
+n034 [label="float"]; n031 -> n034;
+n035 [label="v"]; n032 -> n035;
+
+// float x;
+n040 [label="decl"]; n004 -> n040;
+n041 [label="tipo"]; n042 [label="id"]; n043 [label=";"];
+n040 -> n041; n040 -> n042; n040 -> n043;
+n044 [label="float"]; n041 -> n044;
+n045 [label="x"]; n042 -> n045;
+
+// float[100] a;
+n050 [label="decl"]; n004 -> n050;
+n051 [label="tipo"]; n052 [label="id"]; n053 [label=";"];
+n050 -> n051; n050 -> n052; n050 -> n053;
+
+n054 [label="tipo"];
+n055 [label="["];
+n056 [label="n"];
+n057 [label="]"];
+
+n051 -> n054;
+n051 -> n055;
+n051 -> n056;
+n051 -> n057;
+
+n058 [label="float"]; n054 -> n058;
+n059 [label="a"]; n052 -> n059;
+
+{ rank=same; n054; n055; n056; n057; }
+n054 -> n055 [style=invis];
+n055 -> n056 [style=invis];
+n056 -> n057 [style=invis];
+
+////////////////////////////////////////////////////////////
+  // ===== WHILE CORRECTO =====
+
+// instr
+n100 [label="instr"];
+n005 -> n100;
+
+// while ( bool ) instr
+n101 [label="while"];
+n102 [label="("];
+n103 [label="bool"];
+n104 [label=")"];
+n105 [label="instr"];
+
+n100 -> n101;
+n100 -> n102;
+n100 -> n103;
+n100 -> n104;
+n100 -> n105;
+
+// bool completo
+n103 [label="bool"];
+n200 [label="comb"];
+n201 [label="igualdad"];
+n202 [label="rel"];
+n203 [label="expr"];
+n204 [label="term"];
+n205 [label="unario"];
+n206 [label="factor"];
+n207 [label="true"];
+
+n103 -> n200;
+n200 -> n201;
+n201 -> n202;
+n202 -> n203;
+n203 -> n204;
+n204 -> n205;
+n205 -> n206;
+n206 -> n207;
+
+// el instr que sigue → bloque
+n107 [label="bloque"];
+n105 -> n107;
+
+// bloque → { instrs }
+n108 [label="{"];
+n109 [label="instrs"];
+n110 [label="}"];
+
+n107 -> n108;
+n107 -> n109;
+n107 -> n110;
+////////////////////////////////////////////////////////////
+// ===== DO-WHILE =====
+
+n110 [label="instr"]; n106 -> n110;
+
+n111 [label="do"];
+n112 [label="instr"];
+n113 [label="while"];
+n114 [label="bool"];
+
+n110 -> n111;
+n110 -> n112;
+n110 -> n113;
+n110 -> n114;
+
+// i = i + 1
+n120 [label="asignacion"]; n112 -> n120;
+n121 [label="loc"]; n122 [label="="]; n123 [label="expr"];
+
+n120 -> n121;
+n120 -> n122;
+n120 -> n123;
+
+n124 [label="i"]; n121 -> n124;
+
+// expr i + 1
+n125 [label="expr"];
+n126 [label="+"];
+n127 [label="expr"];
+
+n123 -> n125;
+n123 -> n126;
+n123 -> n127;
+
+n128 [label="i"]; n125 -> n128;
+n129 [label="1"]; n127 -> n129;
+
+// condición while (a[i] < v)
+n130 [label="rel"]; n114 -> n130;
+
+n131 [label="expr"];
+n132 [label="<"];
+n133 [label="expr"];
+
+n130 -> n131;
+n130 -> n132;
+n130 -> n133;
+
+// a[i]
+n134 [label="loc"];
+n135 [label="["];
+n136 [label="expr"];
+n137 [label="]"];
+
+n131 -> n134;
+n131 -> n135;
+n131 -> n136;
+n131 -> n137;
+
+n138 [label="a"]; n134 -> n138;
+n139 [label="i"]; n136 -> n139;
+
+// v
+n140 [label="v"]; n133 -> n140;
+
+////////////////////////////////////////////////////////////
+// ===== IF =====
+
+n150 [label="instr"]; n106 -> n150;
+
+n151 [label="if"];
+n152 [label="bool"];
+n153 [label="instr"];
+
+n150 -> n151;
+n150 -> n152;
+n150 -> n153;
+
+// i >= j
+n154 [label="rel"]; n152 -> n154;
+
+n155 [label="i"];
+n156 [label=">="];
+n157 [label="j"];
+
+n154 -> n155;
+n154 -> n156;
+n154 -> n157;
+
+// break
+n158 [label="break"]; n153 -> n158;
+
+////////////////////////////////////////////////////////////
+// ===== ASIGNACIÓN FINAL =====
+
+n160 [label="instr"]; n106 -> n160;
+
+n161 [label="asignacion"];
+n160 -> n161;
+
+n162 [label="loc"];
+n163 [label="="];
+n164 [label="expr"];
+
+n161 -> n162;
+n161 -> n163;
+n161 -> n164;
+
+n165 [label="x"]; n162 -> n165;
+
+// expr a[i]
+n166 [label="loc"];
+n164 -> n166;
+
+n167 [label="a"];
+n168 [label="["];
+n169 [label="i"];
+n170 [label="]"];
+
+n166 -> n167;
+n166 -> n168;
+n166 -> n169;
+n166 -> n170;
+
+}   
