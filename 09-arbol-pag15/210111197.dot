@@ -1,0 +1,699 @@
+digraph ""
+   {
+node [fontsize=10,width=".4", height=".4", margin=0];
+graph[fontsize=2];
+ 
+   n001 ;
+   n001 [label="Programa"] ;
+   n001 -> n002 ;
+   n002 [label="bloque"] ;
+   n002 -> n003 ;
+   n003 [label= "{"] ;
+      n004 [label= "decls"]
+      n002 -> n004 ;
+      
+      n007 [label= "decls"]
+      n004 -> n007 ;
+      n008 [label= "decl"]
+      n004 -> n008 ;
+
+      n009 [label= "decls"]
+      n007 -> n009
+      n010 [label="decl"]
+      n007 -> n010
+
+      n011 [label= "decls"]
+      n009 -> n011
+      n012 [label="decl"]
+      n009 -> n012
+
+      n013 [label= "decls"]
+      n011 -> n013
+      n014 [label="decl"]
+      n011 -> n014
+
+      n015 [label= "decls"]
+      n013 -> n015
+      n016 [label="decl"]
+      n013 -> n016
+
+      n017 [label= "ε"]
+      n015 -> n017
+      n018 [label= "tipo"]
+      n016 -> n018
+      n019 [label= "i"]
+      n016 -> n019
+      n020 [label= ";"]
+      n016 -> n020
+
+      n021 [label= "int"]
+      n018 -> n021
+
+      n022 [label= "tipo"]
+      n014 -> n022
+      n023 [label= "j"]
+      n014 -> n023
+      n024 [label= ";"]
+      n014 -> n024
+
+      n025 [label= "int"]
+      n022 -> n025
+
+      n026 [label= "tipo"]
+      n012 -> n026
+      n027 [label= "v"]
+      n012 -> n027
+      n028 [label= ";"]
+      n012 -> n028
+
+      n029 [label= "float"]
+      n026 -> n029
+
+      n030 [label= "tipo"]
+      n010 -> n030
+      n031 [label= "x"]
+      n010 -> n031
+      n032 [label= ";"]
+      n010 -> n032
+
+      n033 [label= "float"]
+      n030 -> n033
+
+      n034 [label= "tipo"]
+      n008 -> n034
+      n035 [label= "a"]
+      n008 -> n035
+      n036 [label= ";"]
+      n008 -> n036
+
+      n037 [label= "tipo"]
+      n034 -> n037
+      n038 [label= "["]
+      n034 -> n038
+      n039 [label= "100"]
+      n034 -> n039
+      n040 [label= "]"]
+      n034 -> n040
+      n041 [label= "float"]
+      n037 -> n041
+
+      n005 [label= "instrs"]
+      n002 -> n005 ;
+      n042 [label= "instrs"]
+      n005 -> n042
+      n043 [label= "instr"]
+      n005 -> n043
+
+      n044 [label= "ε"]
+      n042 -> n044
+      n045 [label= "while"]
+      n043 -> n045
+      n046 [label= "("]
+      n043 -> n046
+      n047 [label= "bool"]
+      n043 -> n047
+      n048 [label= ")"]
+      n043 -> n048
+      n049 [label= "instr"]
+      n043 -> n049
+      n050 [label= "bloque"]
+      n049 -> n050
+      
+      n051 [label= "comb"]
+      n047 -> n051
+      n052 [label= "igualdad"]
+      n051 -> n052
+      n053 [label= "rel"]
+      n052 -> n053
+      n054 [label= "expr"]
+      n053 -> n054
+      n055 [label= "term"]
+      n054 -> n055
+      n056 [label= "unario"]
+      n055 -> n056
+      n057 [label= "factor"]
+      n056 -> n057
+      n058 [label= "true"]
+      n057 -> n058
+
+      n059 [label= "{"]
+      n050 -> n059
+         n060 [label= "decls"]
+         n050 -> n060
+         n061 [label= "instrs"]
+         n050 -> n061
+         n063 [label= "ε"]
+         n060 -> n063
+
+         n064 [label= "instrs"]
+         n061 -> n064
+         n065 [label= "instr"]
+         n061 -> n065
+
+            n289 [label= "loc"]
+            n065 -> n289
+            n290 [label= "="]
+            n065 -> n290
+            n291 [label= "bool"]
+            n065 -> n291
+            n292 [label= ";"]
+            n065 -> n292
+
+            n293 [label= "loc"]
+            n289 -> n293
+            n294 [label= "["]
+            n289 -> n294
+            n295 [label= "bool"]
+            n289 -> n295
+            n296 [label= "]"]
+            n289 -> n296
+            n297 [label= "a"]
+            n293 -> n297
+
+            n298 [label= "comb"]
+            n295 -> n298
+            n299 [label= "igualdad"]
+            n298 -> n299
+            n300 [label= "rel"]
+            n299 -> n300
+            n301 [label= "expr"]
+            n300 -> n301
+            n302 [label= "term"]
+            n301 -> n302
+            n303 [label= "unario"]
+            n302 -> n303
+            n304 [label= "factor"]
+            n303 -> n304
+            n305 [label= "loc"]
+            n304 -> n305
+            n306 [label= "j"]
+            n305 -> n306
+
+            n307 [label= "comb"]
+            n291 -> n307
+            n308 [label= "igualdad"]
+            n307 -> n308
+            n309 [label= "rel"]
+            n308 -> n309
+            n310 [label= "expr"]
+            n309 -> n310
+            n311 [label= "term"]
+            n310 -> n311
+            n312 [label= "unario"]
+            n311 -> n312
+            n313 [label= "factor"]
+            n312 -> n313
+            n314 [label= "loc"]
+            n313 -> n314
+            n315 [label= "x"]
+            n314 -> n315
+
+         n066 [label= "instrs"]
+         n064 -> n066
+         n067 [label= "instr"]
+         n064 -> n067
+
+            n248 [label= "loc"]
+            n067 -> n248
+            n249 [label= "="]
+            n067 -> n249
+            n250 [label= "bool"]
+            n067 -> n250
+            n251 [label= ";"]
+            n067 -> n251
+
+            n252 [label= "loc"]
+            n248 -> n252
+            n253 [label= "["]
+            n248 -> n253
+            n254 [label= "bool"]
+            n248 -> n254
+            n255 [label= "]"]
+            n248 -> n255
+            n257 [label= "a"]
+            n252 -> n257
+
+            n258 [label= "comb"]
+            n254 -> n258
+            n259 [label= "igualdad"]
+            n258 -> n259
+            n260 [label= "rel"]
+            n259 -> n260
+            n261 [label= "expr"]
+            n260 -> n261
+            n262 [label= "term"]
+            n261 -> n262
+            n263 [label= "unario"]
+            n262 -> n263
+            n264 [label= "factor"]
+            n263 -> n264
+            n265 [label= "loc"]
+            n264 -> n265
+            n266 [label= "i"]
+            n265 -> n266
+
+            n267 [label= "comb"]
+            n250 -> n267
+            n268 [label= "igualdad"]
+            n267 -> n268
+            n269 [label= "rel"]
+            n268 -> n269
+            n270 [label= "expr"]
+            n269 -> n270
+            n271 [label= "term"]
+            n270 -> n271
+            n272 [label= "unario"]
+            n271 -> n272
+            n273 [label= "factor"]
+            n272 -> n273
+            n274 [label= "loc"]
+            n273 -> n274
+            n275 [label= "loc"]
+            n274 -> n275
+            n276 [label= "["]
+            n274 -> n276
+            n277 [label= "bool"]
+            n274 -> n277
+            n278 [label= "]"]
+            n274 -> n278
+            n279 [label= "a"]
+            n275 -> n279
+
+            n280 [label= "comb"]
+            n277 -> n280
+            n281 [label= "igualdad"]
+            n280 -> n281
+            n282 [label= "rel"]
+            n281 -> n282
+            n283 [label= "expr"]
+            n282 -> n283
+            n284 [label= "term"]
+            n283 -> n284
+            n285 [label= "unario"]
+            n284 -> n285
+            n286 [label= "factor"]
+            n285 -> n286
+            n287 [label= "loc"]
+            n286 -> n287
+            n288 [label= "j"]
+            n287 -> n288
+
+         n068 [label= "instrs"]
+         n066 -> n068
+         n069 [label= "instr"]
+         n066 -> n069
+
+            n212 [label= "loc"]
+            n069 -> n212
+            n213 [label= "="]
+            n069 -> n213
+            n214 [label= "bool"]
+            n069 -> n214
+            n215 [label= ";"]
+            n069 -> n215
+
+            n216 [label= "x"]
+            n212 -> n216
+
+            n217 [label= "comb"]
+            n214 -> n217
+            n218 [label= "igualdad"]
+            n217 -> n218
+            n219 [label= "rel"]
+            n218 -> n219
+            n220 [label= "expr"]
+            n219 -> n220
+            n221 [label= "term"]
+            n220 -> n221
+            n222 [label= "unario"]
+            n221 -> n222
+            n223 [label= "factor"]
+            n222 -> n223
+            n224 [label= "loc"]
+            n223 -> n224
+            n225 [label= "loc"]
+            n224 -> n225
+            n226 [label= "["]
+            n224 -> n226
+            n227 [label= "bool"]
+            n224 -> n227
+            n228 [label= "]"]
+            n224 -> n228
+
+            n229 [label= "bool"]
+            n225 -> n229
+            n230 [label= "comb"]
+            n229 -> n230
+            n231 [label= "igualdad"]
+            n230 -> n231
+            n232 [label= "rel"]
+            n231 -> n232
+            n233 [label= "expr"]
+            n232 -> n233
+            n234 [label= "term"]
+            n233 -> n234
+            n235 [label= "unario"]
+            n234 -> n235
+            n236 [label= "factor"]
+            n235 -> n236
+            n237 [label= "loc"]
+            n236 -> n237
+            n238 [label= "a"]
+            n237 -> n238
+
+            n239 [label= "comb"]
+            n227 -> n239
+            n240 [label= "igualdad"]
+            n239 -> n240
+            n241 [label= "rel"]
+            n240 -> n241
+            n242 [label= "expr"]
+            n241 -> n242
+            n243 [label= "term"]
+            n242 -> n243
+            n244 [label= "unario"]
+            n243 -> n244
+            n245 [label= "factor"]
+            n244 -> n245
+            n246 [label= "loc"]
+            n245 -> n246
+            n247 [label= "i"]
+            n246 -> n247
+
+         n070 [label= "instrs"]
+         n068 -> n070
+         n071 [label= "instr"]
+         n068 -> n071
+
+            n189 [label= "if"]
+            n071 -> n189
+            n190 [label= "("]
+            n071 -> n190
+            n191 [label= "bool"]
+            n071 -> n191
+            n192 [label= ")"]
+            n071 -> n192
+            n193 [label= "instr"]
+            n071 -> n193
+            n194 [label= "break"]
+            n193 -> n194
+            n195 [label= ";"]
+            n193 -> n195
+
+            n196 [label= "comb"]
+            n191 -> n196
+            n197 [label= "igualdad"]
+            n196 -> n197
+            n198 [label= "rel"]
+            n197 -> n198
+            n199 [label= "expr"]
+            n198 -> n199
+            n200 [label= ">="]
+            n198 -> n200
+            n201 [label= "expr"]
+            n198 -> n201
+
+            n202 [label= "term"]
+            n199 -> n202
+            n203 [label= "unario"]
+            n202 -> n203
+            n204 [label= "factor"]
+            n203 -> n204
+            n205 [label= "loc"]
+            n204 -> n205
+            n206 [label= "i"]
+            n205 -> n206
+
+            n207 [label= "term"]
+            n201 -> n207
+            n208 [label= "unario"]
+            n207 -> n208
+            n209 [label= "factor"]
+            n208 -> n209
+            n210 [label= "loc"]
+            n209 -> n210
+            n211 [label= "j"]
+            n210 -> n211
+
+         n072 [label= "instrs"]
+         n070 -> n072
+         n073 [label= "instr"]
+         n070 -> n073
+
+            n133 [label= "do"]
+            n073 -> n133
+            n134 [label= "instr"]
+            n073 -> n134
+            n135 [label= "while"]
+            n073 -> n135
+            n136 [label= "("]
+            n073 -> n136
+            n137 [label= "bool"]
+            n073 -> n137
+            n138 [label= ")"]
+            n073 -> n138
+            n139 [label= ";"]
+            n073 -> n139
+
+            n140 [label= "loc"]
+            n134 -> n140
+            n141 [label= "="]
+            n134 -> n141
+            n142 [label= "bool"]
+            n134 -> n142
+            n143 [label= ";"]
+            n134 -> n143
+
+            n144 [label= "j"]
+            n140 -> n144
+            n145 [label= "comb"]
+            n142 -> n145
+            n146 [label= "igualdad"]
+            n145 -> n146
+            n147 [label= "rel"]
+            n146 -> n147
+            n148 [label= "expr"]
+            n147 -> n148
+
+            n149 [label= "expr"]
+            n148 -> n149
+            n150 [label= "-"]
+            n148 -> n150
+            n151 [label= "term"]
+            n148 -> n151
+
+            n152 [label= "term"]
+            n149 -> n152
+            n153 [label= "unario"]
+            n152 -> n153
+            n154 [label= "factor"]
+            n153 -> n154
+            n155 [label= "loc"]
+            n154 -> n155
+            n156 [label= "j"]
+            n155 -> n156
+
+            n157 [label= "unario"]
+            n151 -> n157
+            n158 [label= "factor"]
+            n157 -> n158
+            n159 [label= "1"]
+            n158 -> n159
+
+            n160 [label= "comb"]
+            n137 -> n160
+            n161 [label= "igualdad"]
+            n160 -> n161
+            n162 [label= "rel"]
+            n161 -> n162
+            n163 [label= "expr"]
+            n162 -> n163
+            n164 [label= ">"]
+            n162 -> n164
+            n165 [label= "expr"]
+            n162 -> n165
+
+            n166 [label= "term"]
+            n163 -> n166
+            n167 [label= "unario"]
+            n166 -> n167
+            n168 [label= "factor"]
+            n167 -> n168
+            n169 [label= "loc"]
+            n168 -> n169
+            n170 [label= "loc"]
+            n169 -> n170
+            n171 [label= "["]
+            n169 -> n171
+            n172 [label= "bool"]
+            n169 -> n172
+            n173 [label= "]"]
+            n169 -> n173
+
+            n174 [label= "a"]
+            n170 -> n174
+            n175 [label= "comb"]
+            n172 -> n175
+            n176 [label= "igualdad"]
+            n175 -> n176
+            n177 [label= "rel"]
+            n176 -> n177
+            n178 [label= "expr"]
+            n177 -> n178
+            n179 [label= "term"]
+            n178 -> n179
+            n180 [label= "unario"]
+            n179 -> n180
+            n181 [label= "factor"]
+            n180 -> n181
+            n182 [label= "loc"]
+            n181 -> n182
+            n183 [label= "j"]
+            n182 -> n183
+
+            n184 [label= "term"]
+            n165 -> n184
+            n185 [label= "unario"]
+            n184 -> n185
+            n186 [label= "factor"]
+            n185 -> n186
+            n187 [label= "loc"]
+            n186 -> n187
+            n188 [label= "v"]
+            n187 -> n188
+
+         n074 [label= "instrs"]
+         n072 -> n074
+         n075 [label= "instr"]
+         n072 -> n075
+         n076 [label= "ε"]
+         n074 -> n076
+
+            n077 [label= "do"]
+            n075 -> n077
+            n078 [label= "instr"]
+            n075 -> n078
+            n079 [label= "while"]
+            n075 -> n079
+            n080 [label= "("]
+            n075 -> n080
+            n081 [label= "bool"]
+            n075 -> n081
+            n082 [label= ")"]
+            n075 -> n082
+            n083 [label= ";"]
+            n075 -> n083
+
+            n084 [label= "loc"]
+            n078 -> n084
+            n085 [label= "="]
+            n078 -> n085
+            n086 [label= "bool"]
+            n078 -> n086
+            n087 [label= ";"]
+            n078 -> n087
+
+            n088 [label= "i"]
+            n084 -> n088
+            n089 [label= "comb"]
+            n086 -> n089
+            n090 [label= "igualdad"]
+            n089 -> n090
+            n091 [label= "rel"]
+            n090 -> n091
+            n092 [label= "expr"]
+            n091 -> n092
+
+            n093 [label= "expr"]
+            n092 -> n093
+            n094 [label= "+"]
+            n092 -> n094
+            n095 [label= "term"]
+            n092 -> n095
+
+            n096 [label= "term"]
+            n093 -> n096
+            n097 [label= "unario"]
+            n096 -> n097
+            n098 [label= "factor"]
+            n097 -> n098
+            n099 [label= "loc"]
+            n098 -> n099
+            n100 [label= "i"]
+            n099 -> n100
+
+            n101 [label= "unario"]
+            n095 -> n101
+            n102 [label= "factor"]
+            n101 -> n102
+            n103 [label= "1"]
+            n102 -> n103
+
+            n104 [label= "comb"]
+            n081-> n104
+            n105 [label= "igualdad"]
+            n104 -> n105
+            n106 [label= "rel"]
+            n105 -> n106
+            n107 [label= "expr"]
+            n106 -> n107
+            n108 [label= "<"]
+            n106 -> n108
+            n109 [label= "expr"]
+            n106 -> n109
+
+            n110 [label= "term"]
+            n107 -> n110
+            n111 [label= "unario"]
+            n110 -> n111
+            n112 [label= "factor"]
+            n111 -> n112
+            n113 [label= "loc"]
+            n112 -> n113
+            n114 [label= "loc"]
+            n113 -> n114
+            n115 [label= "["]
+            n113 -> n115
+            n116 [label= "bool"]
+            n113 -> n116
+            n117 [label= "]"]
+            n113 -> n117
+
+            n118 [label= "a"]
+            n114 -> n118
+            n119 [label= "comb"]
+            n116 -> n119
+            n120 [label= "igualdad"]
+            n119 -> n120
+            n121 [label= "rel"]
+            n120 -> n121
+            n122 [label= "expr"]
+            n121 -> n122
+            n123 [label= "term"]
+            n122 -> n123
+            n124 [label= "unario"]
+            n123 -> n124
+            n125 [label= "factor"]
+            n124 -> n125
+            n126 [label= "loc"]
+            n125 -> n126
+            n127 [label= "i"]
+            n126 -> n127
+
+            n128 [label= "term"]
+            n109 -> n128
+            n129 [label= "unario"]
+            n128 -> n129
+            n130 [label= "factor"]
+            n129 -> n130
+            n131 [label= "loc"]
+            n130 -> n131
+            n132 [label= "v"]
+            n131 -> n132
+
+      n062 [label= "}"]
+      n050 -> n062
+   n006 [label= "}"]
+   n002 -> n006 ; 
+   }
+
